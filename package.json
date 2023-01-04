@@ -1,0 +1,25 @@
+{
+  "name": "microbeaut-vba-snippets",
+  "displayName": "MicroBeaut VBA Snippets",
+  "description": "MicroBeaut Visual Basic for Applications (VBA) Snippets",
+  "version": "0.0.1",
+  "publisher": "MicroBeaut",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "vb",
+        "path": "./snippets/vb.code-snippets"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MicroBeaut/MicroBeaut-VBA-Snippets"
+  }
+}
