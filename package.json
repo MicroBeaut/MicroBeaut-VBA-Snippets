@@ -3,7 +3,7 @@
   "displayName": "MicroBeaut VBA Snippets",
   "description": "MicroBeaut Visual Basic for Applications (VBA) Snippets",
   "version": "0.0.1",
-  "publisher": "MicroBeautVBASnippets",
+  "publisher": "MicroBeaut",
   "icon": "images/microbeautlogo.png",
   "engines": {
     "vscode": "^1.74.0"
