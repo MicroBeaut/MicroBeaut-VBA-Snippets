@@ -672,7 +672,7 @@ End With
 - Initial release of MicroBeaut VBA Snippets
 
 ### [0.0.2]
-- Change packege description.
+- Change packege description
 - Revised statements
 - Added new statements
 
