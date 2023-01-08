@@ -366,8 +366,8 @@
   "Sub": {
     "prefix": "Sub",
     "body": [
-      "${1:${2|Public,Private,Friend|} }Sub ${4:name}(${5:${6:value} As ${7|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})",
-      "\t$0${10:\n\tIf ${11:varName} ${12|=,<>,>,>=,<,<=|} ${6:value} Then Exit Sub\n\t'TODO: STATEMENTS\n}",
+      "${1:${2|Public,Private,Friend|} }Sub ${3:name}(${4:${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})",
+      "\t$0${7:\n\tIf ${8:varName} ${9|=,<>,>,>=,<,<=|} ${10:value} Then Exit Sub\n\t'TODO: STATEMENTS\n}",
       "End Sub"
     ],
     "description": "Sub statement"
@@ -375,9 +375,8 @@
   "Static Sub": {
     "prefix": "Sub Static",
     "body": [
-      "${1:${2|Public,Private,Friend|} }Static Sub ${4:name}(${5:${6:value} As ${7|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})",
-      "\t'TODO: STATEMENTS",
-      "\t$0",
+      "${1:${2|Public,Private,Friend|} }Static Sub ${3:name}(${4:${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})",
+      "\t$0${7:\n\tIf ${8:varName} ${9|=,<>,>,>=,<,<=|} ${10:value} Then Exit Sub\n\t'TODO: STATEMENTS\n}",
       "End Sub"
     ],
     "description": "Sub statement"
