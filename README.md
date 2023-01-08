@@ -1,11 +1,11 @@
 # MicroBeaut VBA Snippets
 ### Visual Basic for Applications (VBA) Snippets
-<br/><br/>
+<br/>
 
 
 # Language Support
 ### Visual Basic
- <br/><br/>
+ <br/>
 
 
 # Statements
@@ -22,7 +22,7 @@ ChDir
 ```vb
 ChDir path
 ```
-<br/><br/>
+<br/>
 
 
 
@@ -38,7 +38,7 @@ ChDrive
 ```vb
 ChDrive drive
 ```
-<br/><br/>
+<br/>
 
 
 ## **``Const``**
@@ -53,7 +53,7 @@ Const
 ```vb
 [ Public | Private ] Const constname [ As type ] = expression
 ```
-<br/><br/>
+<br/>
 
 
 ## **``DeleteSetting ``**
@@ -68,7 +68,7 @@ DeleteSetting
 ```vb
 DeleteSetting appname, section, key
 ```
-<br/><br/>
+<br/>
 
 
 ## **``Dim``**
@@ -84,7 +84,7 @@ Dim WithEvents
 ```vb
 Dim [ WithEvents ] varname [ ( [ subscripts ] ) ] [ As [ New ] type ]
 ```
-<br/><br/>
+<br/>
 
 
 ## **``Do...Loop``**
@@ -127,7 +127,7 @@ Do
   [ statements ]
 Loop [{ While | Until } condition ]
 ```
-<br/><br/>
+<br/>
 
 
 ## **``Enum``**
@@ -145,7 +145,7 @@ Enum
   membername [= constantexpression ] . . .
 End Enum
 ```
-<br/><br/>
+<br/>
 
 
 ## **``Erase``**
@@ -160,7 +160,7 @@ Erase
 ```vb
 Erase arraylist
 ```
-<br/><br/>
+<br/>
 
 
 ## **``For Each...Next``**
@@ -179,7 +179,7 @@ For Each element In group
   [ statements ]
 Next [ element ]
 ```
-<br/><br/>
+<br/>
 
 
 ## **``For...Next``**
@@ -202,7 +202,7 @@ For counter = start To end [ Step step ]
   [ statements ]
 Next [ counter ]
 ```
-<br/><br/>
+<br/>
 
 ## **``Function``**
 Declares the name, arguments, and code that form the body of a **Function** <span style="color:blue">procedure</span>.
@@ -226,7 +226,7 @@ Function Static
   [ name = expression ]
 End Function
 ```
-<br/><br/>
+<br/>
 
 ## **``If...Then...Else``**
 Conditionally executes a group of <span style="color:blue">statements</span>, depending on the value of an expression.
@@ -250,7 +250,7 @@ If condition Then
   [ elsestatements ]]
 End If
 ```
-<br/><br/>
+<br/>
 
 
 ## **``Load``**
@@ -265,7 +265,7 @@ Load
 ```vb
 Load object
 ```
-<br/><br/>
+<br/>
 
 
 ## **``LSet``**
@@ -281,7 +281,7 @@ LSet
 LSet stringvar = string
 LSet varname1 = varname2
 ```
-<br/><br/>
+<br/>
 
 
 ## **``Mid``**
@@ -296,7 +296,7 @@ Mid
 ```vb
 Mid(stringvar, start, [ length ] ) = string
 ```
-<br/><br/>
+<br/>
 
 
 ## **``On Error``**
@@ -314,7 +314,7 @@ On Error GoTo 0
 On Error GoTo line
 On Error Resume Next
 ```
-<br/><br/>
+<br/>
 
 ## **``Option Base``**
 Used at the module level to declare the default lower bound for array subscripts.
@@ -328,7 +328,7 @@ Option Base
 ```vb
 Option Base { 0 | 1 }
 ```
-<br/><br/>
+<br/>
 
 
 ## **``Option Compare``**
@@ -343,7 +343,7 @@ Option Compare
 ```vb
 Option Compare { Binary | Text | Database }
 ```
-<br/><br/>
+<br/>
 
 
 ## **``Option Explicit``**
@@ -358,7 +358,7 @@ Option Explicit
 ```vb
 Option Explicit
 ```
-<br/><br/>
+<br/>
 
 ## **``Option Private Module``**
 When used in host applications that allow references across multiple projects, **Option Private Module** prevents a module's contents from being referenced outside its project. In host applications that don't permit such references, for example, standalone versions of Visual Basic, **Option Private** has no effect.
@@ -372,7 +372,7 @@ Option Private Module
 ```vb
 Option Private Module
 ```
-<br/><br/>
+<br/>
 
 
 ## **``Private``**
@@ -391,7 +391,7 @@ Private WithEvents
 ```vb
 Private [ WithEvents ] varname [ ( [ subscripts ] ) ] [ As [ New ] type ]
 ```
-<br/><br/>
+<br/>
 
 
 
@@ -414,7 +414,7 @@ Property Get Static
   [ name = expression ]
 End Property
 ```
-<br/><br/>
+<br/>
 
 
 ## **``Property Let``**
@@ -434,7 +434,7 @@ Property Let Static
   [ statements ]
 End Property
 ```
-<br/><br/>
+<br/>
 
 ## **``Property Set``**
 Declares the name, arguments, and code that form the body of a **Property** procedure, which sets a reference to an object.
@@ -453,7 +453,7 @@ Property Set Static
   [ statements ]
 End Property
 ```
-<br/><br/>
+<br/>
 
 
 ## **``Public``**
@@ -472,7 +472,7 @@ Public WithEvents
 ```vb
 Public [ WithEvents ] varname [ ( [ subscripts ] ) ] [ As [ New ] type ]
 ```
-<br/><br/>
+<br/>
 
 
 ## **``ReDim``**
@@ -487,7 +487,7 @@ ReDim
 ```vb
 ReDim [ Preserve ] varname ( subscripts )
 ```
-<br/><br/>
+<br/>
 
 
 ## **``RmDir``**
@@ -502,7 +502,7 @@ RmDir
 ```vb
 RmDir path
 ```
-<br/><br/>
+<br/>
 
 ## **``RSet``**
 Right aligns a string within a string variable, or copies a variable of one user-defined type to another variable of a different user-defined type.
@@ -517,7 +517,7 @@ RSet
 RSet stringvar = string
 RSet varname1 = varname2
 ```
-<br/><br/>
+<br/>
 
 
 ## **``SaveSetting``**
@@ -535,7 +535,7 @@ SaveSetting appname, section, key, setting
 
 ### **Remarks**
 The root of these registry settings is: <code>Computer\HKEY_CURRENT_USER\Software\VB and VBA Program Settings</code>.
-<br/><br/>
+<br/>
 
 
 ## **``Select Case``**
@@ -555,7 +555,7 @@ Select Case testexpression
   [ elsestatements ]]
 End Select
 ```
-<br/><br/>
+<br/>
 
 ## **``Static``**
 Used at the procedure level to declare variables and allocate storage space. Variables declared with the **Static** statement retain their values as long as the code is running.
@@ -569,7 +569,7 @@ Static
 ```vb
 Static varname [ ( [ subscripts ] ) ] [ As [ New ] type ]
 ```
-<br/><br/>
+<br/>
 
 
 ## **``Sub``**
@@ -592,7 +592,7 @@ Sub Static
   [ statements ]
 End Sub
 ```
-<br/><br/>
+<br/>
 
 ## **``Type``**
 Used at the module level to define a user-defined data type containing one or more elements.
@@ -609,7 +609,7 @@ Type
   [ elementname [ ( [ subscripts ] ) ] As type ] . . .
 End Type
 ```
-<br/><br/>
+<br/>
 
 ## **``Unload``**
 Removes an object from memory.
@@ -623,7 +623,7 @@ Unload
 ```vb
 Unload object
 ```
-<br/><br/>
+<br/>
 
 
 ## **``While...Wend``**
@@ -640,7 +640,7 @@ While condition
   [ statements ]
 Wend
 ```
-<br/><br/>
+<br/>
 
 
 ## **``With``**
@@ -657,13 +657,13 @@ With object
   [ statements ]
 End With
 ```
-<br/><br/>
+<br/>
 
 
 # Reference
 
 ### [Office VBA Reference](https://learn.microsoft.com/en-us/office/vba/api/overview/)
-<br/><br/>
+<br/>
 
 
 # Release Notes
@@ -676,7 +676,7 @@ End With
 - Revised statements
 - Added new statements
 
-<br/><br/>
+<br/>
 
 
 # License
