@@ -1,7 +1,11 @@
 # Change Log
 
-All notable changes to the "microbeaut-vba-snippets" extension will be documented in this file.
+All notable changes to the "Microbeaut VBA Snippets" extension will be documented in this file.
 
-## [0.0.1]
+### [0.0.1]
+- Initial release of MicroBeaut VBA Snippets
 
-- Initial release
+### [0.0.2]
+- Change packege description.
+- Revised statements
+- Added new statements

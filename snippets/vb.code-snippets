@@ -1,184 +1,426 @@
 {
-  "Dim Variable AS Type": {
+  "ChDir...": {
+    "prefix": "ChDir",
+    "body": [
+      "ChDir \"${1:path}\"",
+      "$0"
+    ],
+    "description": "ChDir statement"
+  },
+  "ChDrive...": {
+    "prefix": "ChDrive",
+    "body": [
+      "ChDrive \"${1:drive}\"",
+      "$0"
+    ],
+    "description": "ChDrive statement"
+  },
+  "Const...": {
+    "prefix": "Const",
+    "body": [
+      "${1:${2|Public,Private|} }Const ${3:constName}${4: As ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}} = ${6:expression}",
+      "$0"
+    ],
+    "description": "Const statement"
+  },
+  "DeleteSetting": {
+    "prefix": "DeleteSetting",
+    "body": [
+      "DeleteSetting appname := ${1:appName}, section := ${2:sectionName}, key := ${3:keyName}",
+      "$0"
+    ],
+    "description": "DeleteSetting statement"
+  },
+  "Dim...": {
     "prefix": "Dim",
     "body": [
-      "Dim ${1:Variable}${2:(${3:9})} AS ${4|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}$0"
+      "Dim ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
+      "$0"
     ],
-    "description": "Declaring variables"
+    "description": "Dim statement"
   },
-  "ReDim": {
-    "prefix": "ReDim",
+  "Dim WithEvents...": {
+    "prefix": "Dim WithEvents",
     "body": [
-      "ReDim${1: Preserve} ${2:Variable}(${3:${4:Count}${5|+,-|}}${6:1})$0"
+      "Dim WithEvents ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
+      "$0"
     ],
-    "description": "ReDim Statement"
+    "description": "Dim WithEvents statement"
   },
-  "Private Variable As Type": {
-    "prefix": "Private",
-    "body": [
-      "Private ${1:Variable} AS ${2|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}$0"
+  "Do...Loop Until/While": {
+    "prefix": [
+      "Do Loop Until",
+      "Do Loop While"
     ],
-    "description": "Private Variables"
-  },
-  "Public Variable As Type": {
-    "prefix": "Public",
     "body": [
-      "Public ${1:Variable} AS ${2|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}$0"
-    ],
-    "description": "Public Variables"
-  },
-  "Function": {
-    "prefix": "Function",
-    "body": [
-      "${1|Public,Private|} Function ${2:Name}(${3:${4:Value} AS ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})${6: As ${7|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}}",
-      "\t'TODO: STATEMENTS\n\t$0",
-      "End Function"
-    ],
-    "description": "Public Function"
-  },
-  "Property Get": {
-    "prefix": "Property Get",
-    "body": [
-      "${1|Public,Private|} Property Get ${2:Name} (${3:${4:Optional }${5:Value} AS ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}}) As ${7|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
+      "Do",
       "\t'TODO: STATEMENTS",
-      "\t$0${8:\n\t${2:Name} = ${9:Variable}}",
-      "End Property"
+      "\t$0${5:\n\tIf ${6:varName} ${7|=,<>,>,>=,<,<=|} ${8:value} Then Exit Do\n\t'TODO: STATEMENTS\n}",
+      "Loop ${1|Until, While|} ${2:varName} ${3|=,<>,>,>=,<,<=|} ${4:value}"
     ],
-    "description": "Property Get Statement"
+    "description": "Do...Loop Until/While Statement"
   },
-  "Property Let": {
-    "prefix": "Property Let",
-    "body": [
-      "${1|Public,Private|} Property Let ${2:Name} (${3:Value} AS ${4|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|})",
-      "\t'TODO: STATEMENTS",
-      "\t$0${5:\n\t${6:Variable} = ${3:Value}}",
-      "End Property"
+  "Do Until/While...Loop": {
+    "prefix": [
+      "Do Until Loop",
+      "Do While Loop"
     ],
-    "description": "Property Let Statement"
+    "body": [
+      "Do ${1|Until, While|} ${2:varName} ${3|=,<>,>,>=,<,<=|} ${4:value}",
+      "\t'TODO: STATEMENTS",
+      "\t$0${5:\n\tIf ${6:varName} ${7|=,<>,>,>=,<,<=|} ${8:value} Then Exit Do\n\t'TODO: STATEMENTS\n}",
+      "Loop"
+    ],
+    "description": "Do...Loop Until/While Statement"
   },
-  "Property Set": {
-    "prefix": "Property Set",
+  "Enum...": {
+    "prefix": "Enum",
     "body": [
-      "${1|Public,Private|} Property Set ${2:Name} (${3:Value} AS ${4|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|})",
-      "\t'TODO: STATEMENTS",
-      "\t$0${5:\n\t${6:Variable} = ${3:Value}}",
-      "End Property"
+      "${1:${2|Public,Private|} }Enum ${3:name}",
+      "\t'TODO: USER-DEFINED MEMBERS",
+      "\t${4:membername} = ${5:constant}",
+      "\t$0",
+      "End Type"
     ],
-    "description": "Property Set Statement"
+    "description": "Enum statement"
   },
-  "Property Get-Let": {
-    "prefix": "Property Get Let",
+  "Erase...": {
+    "prefix": "Erase",
     "body": [
-      "${1|Public,Private|} Property Get ${2:Name} (${3:${4:Optional }${5:Value} AS ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}}) As ${7|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
-      "\t'TODO: STATEMENTS",
-      "\t$0${8:\n\t${2:Name} = ${9:Variable}}$0",
-      "End Property\n",
-      "${1|Public,Private|} Property Let ${2} (${10:Value} AS ${7})",
-      "\t'TODO: STATEMENTS",
-      "\t${11:\n\t${12:Variable} = ${10:Value}}",
-      "End Property"
+      "Erase ${1:arraylist}",
+      "$0"
     ],
-    "description": "Property Let Statement"
-  },
-  "Select Case": {
-    "prefix": "Select Case",
-    "body": [
-      "Select Case ${1:TestExpression}",
-      "\tCase ${2:Expression}",
-      "\t'TODO: STATEMENTS",
-      "\t$0${3:\n\tCase Else\n\t\t'TODO: ELSE STATEMENTS\n\t\t}",
-      "End Select"
-    ],
-    "description": "Select Case Statements"
-  },
-  "For...Next": {
-    "prefix": "For Next",
-    "body": [
-      "${2:Dim ${1:Counter} AS ${3|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}\n\n}For ${1:Counter} = ${4:0} to ${5:9}${6: Step ${7|-,+|} ${8:1}}",
-      "\t'TODO: STATEMENTS",
-      "\t$0${9:\n\tIf ${1:Counter} = ${10|True,False|} Then Exit For}",
-      "Next ${1:Counter}"
-    ],
-    "description": "For...Next Statement"
+    "description": "Erase statement"
   },
   "For Each...Next": {
-      "prefix": "For Each",
+    "prefix": "For Each",
     "body": [
-      "${2:Dim ${1:Element} AS ${3|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}\n\n}For Each ${1} in ${4:Object}",
+      "For Each ${1:element} in ${2:group}",
       "\t'TODO: STATEMENTS",
-      "\t$0${9:\n\tIf ${1} = ${10|True,False|} Then Exit For}",
-      "Next ${1}"
+      "\t$0${3:\n\tIf ${4:varName} ${5|=,<>,>,>=,<,<=|} ${6:value} Then Exit For\n\t'TODO: STATEMENTS\n}",
+      "Next ${1:element}"
     ],
     "description": "For Each...Next Statement"
   },
-  "Do...Loop Until": {
-    "prefix": "Do Loop Until",
-    "body": [
-      "Do",
-      "\t'TODO: STATEMENTS",
-      "\t$0${3:\n\tIf ${1:Variable} = ${5|True,False|} Then Exit Do\n\t}",
-      "\t'Repeats a block of statements until a condition becomes True",
-      "Loop Until ${1:Variable} = ${2|True,False|}"
+  "For...Next": {
+    "prefix": [
+      "For ",
+      "For Next"
     ],
-    "description": "Do...Loop Until Statement"
+    "body": [
+      "For ${1:counter} = ${2:0} to ${3:9}${4: Step ${5|-,+|} ${6:1}}",
+      "\t'TODO: STATEMENTS",
+      "\t$0${7:\n\tIf ${8:varName} ${9|=,<>,>,>=,<,<=|} ${10:value} Then Exit For\n\t'TODO: STATEMENTS\n}",
+      "Next ${1:counter}"
+    ],
+    "description": "For...Next Statement"
   },
-  "Do...Loop While": {
-    "prefix": "Do Loop While",
+  "Function...": {
+    "prefix": "Function",
     "body": [
-      "Do",
+      "${1:${2|Public,Private,Friend|} }Function ${3:name}(${4:${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})${7: As ${8|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}}",
       "\t'TODO: STATEMENTS",
-      "\t$0${3:\n\tIf ${1:Variable} = ${5|True,False|} Then Exit Do\n\t}",
-      "\t'Repeats a block of statements while a condition is True",
-      "Loop While ${1:Variable} <> ${2|True,False|}"
+      "\t$0${9:\n\tIf ${10:varName} ${11|=,<>,>,>=,<,<=|} ${12:value} Then Exit Function\n\t'TODO: STATEMENTS\n}",
+      "\t${13:${3:name} = ${14:value}}",
+      "End Function"
     ],
-    "description": "Do...Loop While Statement"
+    "description": "Function statement"
   },
-  "Do Until...Loop": {
-    "prefix": "Do Until",
+  "Static Function...": {
+    "prefix": "Function Static",
     "body": [
-      "'Repeats a block of statements until a condition becomes True",
-      "Do Until ${1:Variable} = ${2|True,False|}",
+      "${1:${2|Public,Private,Friend|} }Static Function ${3:name}(${4:${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})${7: As ${8|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}}",
       "\t'TODO: STATEMENTS",
-      "\t$0${3:\n\tIf ${1:Variable} = ${5|True,False|} Then Exit Do\n\t}",
-      "Loop"
+      "\t$0${9:\n\tIf ${10:varName} ${11|=,<>,>,>=,<,<=|} ${12:value} Then Exit Function\n\t'TODO: STATEMENTS\n}",
+      "\t${13:${3:name} = ${14:value}}",
+      "End Function"
     ],
-    "description": "Do Loop...Until Statement"
-  },
-  "Do While...Loop": {
-    "prefix": "Do While",
-    "body": [
-      "'Repeats a block of statements while a condition is True",
-      "Do While ${1:Variable} = ${2|True,False|}",
-      "\t'TODO: STATEMENTS",
-      "\t$0${3:\n\tIf ${1:Variable} = ${5|True,False|} Then Exit Do\n\t}",
-      "Loop"
-    ],
-    "description": "Do Loop...Until Statement"
+    "description": "Static Function statement"
   },
   "If...Then...Else": {
-    "prefix": "If Then Else",
+    "prefix": "If",
     "body": [
-      "If ${1:Variable1} ${2|=,<>,>,>=,<,<=|} ${3:Variable2} Then",
+      "If ${1:varName} ${2|=,<>,>,>=,<,<=|} ${3:value} Then",
       "\t'TODO: STATEMENTS",
-      "\t$0${4:\nElseif ${1:Variable1} ${6|=,<>,>,>=,<,<=|} ${7:Variable3} Then\n\t'TODO: STATEMENTS\n\t}${8:\nElse\n\t'TODO: STATEMENTS\n\t}",
+      "\t$0${4:\nElseif ${1:varName} ${5|=,<>,>,>=,<,<=|} ${6:value} Then\n\t'TODO: STATEMENTS\n\t}${7:\nElse\n\t'TODO: STATEMENTS\n\t}",
       "End If"
     ],
     "description": "If...Then...Else statement"
   },
-  "Event": {
-    "prefix": "Event",
+  "Load": {
+    "prefix": "Load",
     "body": [
-      "${9:Public Event ${8:EventHandler}(${3})\n}${1|Public,Private|} Function ${2:Name}(${3:${4:Value} AS ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})${6: As ${7|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}}",
-      "\t'TODO: STATEMENTS\n\t$0",
-      "\tRaiseEvent ${8:EventHandler}(${4}})",
-      "End Function",
-      "",
-      "'Cut the below stements to Form or other class",
-      "Dim WithEvents ${10:VariableHandler} As ${11:ClassName}",
-      "Private Sub ${10:VariableHandler}_${8:EventHandler}(${3})}",
-      "\t'TODO: STATEMENTS\n\t",
+      "Load ${1:object}",
+      "$0"
+    ],
+    "description": "Load statement"
+  },
+  "LSet": {
+    "prefix": "LSet",
+    "body": [
+      "LSet ${1:stringvar} = ${2:string}",
+      "$0"
+    ],
+    "description": "LSet statement"
+  },
+  "Mid": {
+    "prefix": "Mid",
+    "body": [
+      "Mid(${1:stringvar}, ${2:start}${3:, ${4:length}})${5: = ${6:string}}",
+      "$0"
+    ],
+    "description": "Mid Statement"
+  },
+  "On Error Goto": {
+    "prefix": "On Error Goto",
+    "body": [
+      "On Error Goto ${1|Line,0|}",
+      "$0"
+    ],
+    "description": "On Error statement"
+  },
+  "On Error Resume Next": {
+    "prefix": "On Error Resume Next",
+    "body": [
+      "On Error Resume Next",
+      "$0"
+    ],
+    "description": "On Error statement"
+  },
+  "Option Base": {
+    "prefix": "Option Base",
+    "body": [
+      "Option Base ${1|1,0|}",
+      "$0"
+    ],
+    "description": "Option Base statement"
+  },
+  "Option Option Compare": {
+    "prefix": "Option Compare",
+    "body": [
+      "Option Compare ${1|Binary,Text,Database|}",
+      "$0"
+    ],
+    "description": "Option Compare statement"
+  },
+  "Option Explicit": {
+    "prefix": "Option Explicit",
+    "body": [
+      "Option Explicit",
+      "$0"
+    ],
+    "description": "Option Explicit statement"
+  },
+  "Option Private Module": {
+    "prefix": "Option Private Module",
+    "body": [
+      "Option Private Module",
+      "$0"
+    ],
+    "description": "Option Private Module statement"
+  },
+  "Private": {
+    "prefix": "Private",
+    "body": [
+      "Private ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
+      "$0"
+    ],
+    "description": "Private statement"
+  },
+  "Private WithEvents": {
+    "prefix": "Private WithEvents",
+    "body": [
+      "Private WithEvents ${2:varName}${3:(${4:9})} As${5: New} ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
+      "$0"
+    ],
+    "description": "Private WithEvents statement"
+  },
+  "Property Get": {
+    "prefix": "Property Get",
+    "body": [
+      "${1|Public,Private,Friend|} Property Get ${2:name} (${3:${4:Optional }${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}}) As ${7|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
+      "\t'TODO: STATEMENTS",
+      "\t$0",
+      "\n\t${2:name} = ${9:varName}",
+      "End Property"
+    ],
+    "description": "Property Get Statement"
+  },
+  "Static Property Get": {
+    "prefix": "Property Get Static",
+    "body": [
+      "${1|Public,Private,Friend|} Static Property Get ${2:name} (${3:${4:Optional }${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}}) As ${7|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
+      "\t'TODO: STATEMENTS",
+      "\t$0",
+      "\n\t${2:name} = ${9:varName}",
+      "End Property"
+    ],
+    "description": "Property Get Static Statement"
+  },
+  "Property Let": {
+    "prefix": "Property Let",
+    "body": [
+      "${1|Public,Private|} Property Let ${2:name} (${3:value} As ${4|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|})",
+      "\t'TODO: STATEMENTS",
+      "\t$0${5:\n\t\n\t${6:varName} = ${3:value}}",
+      "End Property"
+    ],
+    "description": "Property Let Statement"
+  },
+  "Static Property Let": {
+    "prefix": "Property Let Static",
+    "body": [
+      "${1|Public,Private|} Static Property Let ${2:name} (${3:value} As ${4|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|})",
+      "\t'TODO: STATEMENTS",
+      "\t$0${5:\n\t\n\t${6:varName} = ${3:value}}",
+      "End Property"
+    ],
+    "description": "Property Let Static Statement"
+  },
+  "Property Set": {
+    "prefix": "Property Set",
+    "body": [
+      "${1|Public,Private|} Property Set ${2:name} (${3:value} As ${4|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|})",
+      "\t'TODO: STATEMENTS",
+      "\t$0${5:\n\t\n\tSet ${6:varName} = ${3:value}}",
+      "End Property"
+    ],
+    "description": "Property Set Statement"
+  },
+  "Static Property Set": {
+    "prefix": "Property Set Static",
+    "body": [
+      "${1|Public,Private|} Static Property Set ${2:name} (${3:value} As ${4|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|})",
+      "\t'TODO: STATEMENTS",
+      "\t$0${5:\n\t\n\tSet ${6:varName} = ${3:value}}",
+      "End Property"
+    ],
+    "description": "Property Set Statement"
+  },
+  "Public": {
+    "prefix": "Public",
+    "body": [
+      "Public ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
+      "$0"
+    ],
+    "description": "Public statement"
+  },
+  "Public WithEvents": {
+    "prefix": "Public WithEvents",
+    "body": [
+      "Public WithEvents ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
+      "$0"
+    ],
+    "description": "Public WithEvents statement"
+  },
+  "ReDim": {
+    "prefix": "ReDim",
+    "body": [
+      "ReDim${1: Preserve} ${2:varName}(${3:${4:Count}${5|+,-|}}${6:1})$0"
+    ],
+    "description": "ReDim Statement"
+  },
+  "RmDir Path": {
+    "prefix": "RmDir",
+    "body": [
+      "RmDir \"${1:path}\"",
+      "$0"
+    ],
+    "description": "RmDir Stetment"
+  },
+  "RSet": {
+    "prefix": "RSet",
+    "body": [
+      "RSet ${1:stringvar} = ${2:string}",
+      "$0"
+    ],
+    "description": "RSet statement"
+  },
+  "SaveSetting": {
+    "prefix": "SaveSetting",
+    "body": [
+      "SaveSetting appname := ${1:appName}, section := ${2:sectionName}, key := ${3:keyName}, setting := ${4:value}",
+      "$0"
+    ],
+    "description": "SaveSetting statement"
+  },
+  "Select Case": {
+    "prefix": "Select Case",
+    "body": [
+      "Select Case ${1:testexpression}",
+      "\tCase ${2:expression}",
+      "\t\t'TODO: STATEMENTS",
+      "\t\t$0${3:\n\tCase Else\n\t\t'TODO: ELSE STATEMENTS\n\t\t}",
+      "End Select"
+    ],
+    "description": "Select Case Statements"
+  },
+  "Static Variable": {
+    "prefix": "Static",
+    "body": [
+      "Static ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
+      "$0"
+    ],
+    "description": "Static statement"
+  },
+  "Sub": {
+    "prefix": "Sub",
+    "body": [
+      "${1:${2|Public,Private,Friend|} }Sub ${4:name}(${5:${6:value} As ${7|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})",
+      "\t$0${10:\n\tIf ${11:varName} ${12|=,<>,>,>=,<,<=|} ${6:value} Then Exit Sub\n\t'TODO: STATEMENTS\n}",
       "End Sub"
     ],
-    "description": "Event Handlers"
+    "description": "Sub statement"
   },
+  "Static Sub": {
+    "prefix": "Sub Static",
+    "body": [
+      "${1:${2|Public,Private,Friend|} }Static Sub ${4:name}(${5:${6:value} As ${7|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})",
+      "\t'TODO: STATEMENTS",
+      "\t$0",
+      "End Sub"
+    ],
+    "description": "Sub statement"
+  },
+  "Type": {
+    "prefix": "Type",
+    "body": [
+      "${1:${2|Public,Private|} }Type ${3:name}",
+      "\t'TODO: USER-DEFINED ELEMENTS",
+      "\t${4:elementname}${5:(${6:9})} As ${7|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
+      "\t$0",
+      "End Type"
+    ],
+    "description": "Type statement"
+  },
+  "Unload": {
+    "prefix": "Unload",
+    "body": [
+      "Unload ${1:object}",
+      "$0"
+    ],
+    "description": "Unload statement"
+  },
+  "While...Wend": {
+    "prefix": [
+      "While Wend"
+    ],
+    "body": [
+      "While ${1:varName} ${2|=,<>,>,>=,<,<=|} ${3:value}",
+      "\t'TODO: STATEMENTS",
+      "\t$0",
+      "Wend"
+    ],
+    "description": "While...Wend Statement"
+  },
+  "With": {
+    "prefix": "With",
+    "body": [
+      "With ${1:object}",
+      "\t'TODO: STATEMENTS",
+      "\t$0",
+      "End With"
+    ],
+    "description": "With statement"
+  }
 }
