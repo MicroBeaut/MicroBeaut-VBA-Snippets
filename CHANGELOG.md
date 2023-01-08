@@ -6,6 +6,6 @@ All notable changes to the "Microbeaut VBA Snippets" extension will be documente
 - Initial release of MicroBeaut VBA Snippets
 
 ### [0.0.2]
-- Changed packege description.
+- Changed package description
 - Revised statements
 - Added new statements
