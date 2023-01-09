@@ -56,7 +56,7 @@
       "Do",
       "\t'TODO: STATEMENTS",
       "\t$0${5:\n\tIf ${6:varName} ${7|=,<>,>,>=,<,<=|} ${8:value} Then Exit Do\n\t'TODO: STATEMENTS\n}",
-      "Loop ${1|Until, While|} ${2:varName} ${3|=,<>,>,>=,<,<=|} ${4:value}"
+      "Loop ${1|Until,While|} ${2:varName} ${3|=,<>,>,>=,<,<=|} ${4:value}"
     ],
     "description": "Do...Loop Until/While Statement"
   },
@@ -66,7 +66,7 @@
       "Do While Loop"
     ],
     "body": [
-      "Do ${1|Until, While|} ${2:varName} ${3|=,<>,>,>=,<,<=|} ${4:value}",
+      "Do ${1|Until,While|} ${2:varName} ${3|=,<>,>,>=,<,<=|} ${4:value}",
       "\t'TODO: STATEMENTS",
       "\t$0${5:\n\tIf ${6:varName} ${7|=,<>,>,>=,<,<=|} ${8:value} Then Exit Do\n\t'TODO: STATEMENTS\n}",
       "Loop"
