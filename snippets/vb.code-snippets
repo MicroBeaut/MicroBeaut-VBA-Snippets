@@ -32,7 +32,7 @@
     "description": "DeleteSetting statement"
   },
   "Dim...": {
-    "prefix": "Dim",
+    "prefix": "Dim ",
     "body": [
       "Dim ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
       "$0"
