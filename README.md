@@ -22,6 +22,7 @@ ChDir
 ```vb
 ChDir path
 ```
+![ChDir](./images/ChDir.gif)
 <br/>
 
 
@@ -38,6 +39,7 @@ ChDrive
 ```vb
 ChDrive drive
 ```
+![ChDir](./images/ChDrive.gif)
 <br/>
 
 
@@ -53,6 +55,11 @@ Const
 ```vb
 [ Public | Private ] Const constname [ As type ] = expression
 ```
+![Alt Text](./images/Const_1.gif)
+
+![Alt Text](./images/Const_2.gif)
+
+![Alt Text](./images/Const_3.gif)
 <br/>
 
 
