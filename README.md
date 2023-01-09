@@ -75,7 +75,7 @@ Declares <span style="color:blue">variables</span> and allocates storage space.
 ### **Prefix**
 ```vb
 Dim
-Dim WithEvents
+Dim With
 ```
 
 ### **Syntax**
@@ -185,7 +185,7 @@ Repeats a group of <span style="color:blue">statements</span> a specified number
 
 ### **Prefix**
 ```vb
-For
+For 
 
 Or,
 
@@ -302,8 +302,8 @@ Enables an error-handling routine and specifies the location of the routine with
 
 ### **Prefix**
 ```vb
-On Error GoTo
-On Error Resume Next
+On Error Go
+On Error Re
 ```
 
 ### **Syntax**
@@ -382,7 +382,7 @@ Private
 
 Or,
 
-Private WithEvents
+Private With
 ```
 
 ### **Syntax**
@@ -463,7 +463,7 @@ Public
 
 Or,
 
-Public WithEvents
+Public With
 ```
 
 ### **Syntax**
@@ -673,6 +673,9 @@ End With
 - Changed package description
 - Revised statements
 - Added new statements
+
+### [0.0.3]
+- Changed the prefix for ```Dim WithEvent```, ``` On Error *```, ```Private WithEvent```, and ```Public WithEvent```
 <br/>
 
 

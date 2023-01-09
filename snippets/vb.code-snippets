@@ -40,7 +40,7 @@
     "description": "Dim statement"
   },
   "Dim WithEvents...": {
-    "prefix": "Dim WithEvents",
+    "prefix": "Dim With",
     "body": [
       "Dim WithEvents ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
       "$0"
@@ -172,7 +172,7 @@
     "description": "Mid Statement"
   },
   "On Error Goto": {
-    "prefix": "On Error Goto",
+    "prefix": "On Error Go",
     "body": [
       "On Error Goto ${1|Line,0|}",
       "$0"
@@ -180,7 +180,7 @@
     "description": "On Error statement"
   },
   "On Error Resume Next": {
-    "prefix": "On Error Resume Next",
+    "prefix": "On Error Re",
     "body": [
       "On Error Resume Next",
       "$0"
@@ -228,7 +228,7 @@
     "description": "Private statement"
   },
   "Private WithEvents": {
-    "prefix": "Private WithEvents",
+    "prefix": "Private With",
     "body": [
       "Private WithEvents ${2:varName}${3:(${4:9})} As${5: New} ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
       "$0"
@@ -306,7 +306,7 @@
     "description": "Public statement"
   },
   "Public WithEvents": {
-    "prefix": "Public WithEvents",
+    "prefix": "Public With",
     "body": [
       "Public WithEvents ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
       "$0"
