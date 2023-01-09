@@ -2,11 +2,9 @@
 ### Visual Basic for Applications (VBA) Snippets
 <br/>
 
+<img src="./images/install-microbeaut-vba-snippets.gif" width="640px" height="480px">
 
-# Language Support
-### Visual Basic
- <br/>
-
+<br/>
 
 # Statements
 ## **``ChDir``**
@@ -22,7 +20,6 @@ ChDir
 ```vb
 ChDir path
 ```
-<img src="./images/ChDir.gif" width="640px" height="400px">
 <br/>
 
 
@@ -39,7 +36,6 @@ ChDrive
 ```vb
 ChDrive drive
 ```
-<img src="./images/ChDrive.gif" width="640px" height="400px">
 <br/>
 
 
@@ -55,9 +51,6 @@ Const
 ```vb
 [ Public | Private ] Const constname [ As type ] = expression
 ```
-<img src="./images/Const_1.gif" width="640px" height="400px">
-<img src="./images/Const_2.gif" width="640px" height="400px">
-<img src="./images/Const_3.gif" width="640px" height="400px">
 <br/>
 
 
