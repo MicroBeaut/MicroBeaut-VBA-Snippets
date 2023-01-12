@@ -12,3 +12,6 @@ All notable changes to the "Microbeaut VBA Snippets" extension will be documente
 
 ### [0.0.3]
 - Changed the prefix for ```Dim WithEvent```, ``` On Error *```, ```Private WithEvent```, and ```Public WithEvent```
+
+### [0.0.4]
+- Revised the prefix for ```For Next```

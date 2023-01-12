@@ -185,10 +185,6 @@ Repeats a group of <span style="color:blue">statements</span> a specified number
 
 ### **Prefix**
 ```vb
-For 
-
-Or,
-
 For Next
 ```
 
@@ -676,6 +672,10 @@ End With
 
 ### [0.0.3]
 - Changed the prefix for ```Dim WithEvent```, ``` On Error *```, ```Private WithEvent```, and ```Public WithEvent```
+<br/>
+
+### [0.0.4]
+- Revised the prefix for ```For Next```
 <br/>
 
 
