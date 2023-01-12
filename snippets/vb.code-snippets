@@ -1,6 +1,6 @@
 {
   "ChDir...": {
-    "prefix": "ChDir",
+    "prefix": "ChDir ",
     "body": [
       "ChDir \"${1:path}\"",
       "$0"
@@ -8,7 +8,7 @@
     "description": "ChDir statement"
   },
   "ChDrive...": {
-    "prefix": "ChDrive",
+    "prefix": "ChDrive ",
     "body": [
       "ChDrive \"${1:drive}\"",
       "$0"
@@ -16,7 +16,7 @@
     "description": "ChDrive statement"
   },
   "Const...": {
-    "prefix": "Const",
+    "prefix": "Const ",
     "body": [
       "${1:${2|Public,Private|} }Const ${3:constName}${4: As ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}} = ${6:expression}",
       "$0"
@@ -24,7 +24,7 @@
     "description": "Const statement"
   },
   "DeleteSetting": {
-    "prefix": "DeleteSetting",
+    "prefix": "DeleteSetting ",
     "body": [
       "DeleteSetting appname := ${1:appName}, section := ${2:sectionName}, key := ${3:keyName}",
       "$0"
@@ -74,7 +74,7 @@
     "description": "Do...Loop Until/While Statement"
   },
   "Enum...": {
-    "prefix": "Enum",
+    "prefix": "Enum ",
     "body": [
       "${1:${2|Public,Private|} }Enum ${3:name}",
       "\t'TODO: USER-DEFINED MEMBERS",
@@ -85,7 +85,7 @@
     "description": "Enum statement"
   },
   "Erase...": {
-    "prefix": "Erase",
+    "prefix": "Erase ",
     "body": [
       "Erase ${1:arraylist}",
       "$0"
@@ -115,7 +115,7 @@
     "description": "For...Next Statement"
   },
   "Function...": {
-    "prefix": "Function",
+    "prefix": "Function ",
     "body": [
       "${1:${2|Public,Private,Friend|} }Function ${3:name}(${4:${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})${7: As ${8|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}}",
       "\t'TODO: STATEMENTS",
@@ -137,7 +137,7 @@
     "description": "Static Function statement"
   },
   "If...Then...Else": {
-    "prefix": "If",
+    "prefix": "If ",
     "body": [
       "If ${1:varName} ${2|=,<>,>,>=,<,<=|} ${3:value} Then",
       "\t'TODO: STATEMENTS",
@@ -147,7 +147,7 @@
     "description": "If...Then...Else statement"
   },
   "Load": {
-    "prefix": "Load",
+    "prefix": "Load ",
     "body": [
       "Load ${1:object}",
       "$0"
@@ -155,7 +155,7 @@
     "description": "Load statement"
   },
   "LSet": {
-    "prefix": "LSet",
+    "prefix": "LSet ",
     "body": [
       "LSet ${1:stringvar} = ${2:string}",
       "$0"
@@ -163,7 +163,7 @@
     "description": "LSet statement"
   },
   "Mid": {
-    "prefix": "Mid",
+    "prefix": "Mid(",
     "body": [
       "Mid(${1:stringvar}, ${2:start}${3:, ${4:length}})${5: = ${6:string}}",
       "$0"
@@ -219,7 +219,7 @@
     "description": "Option Private Module statement"
   },
   "Private": {
-    "prefix": "Private",
+    "prefix": "Private ",
     "body": [
       "Private ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
       "$0"
@@ -297,7 +297,7 @@
     "description": "Property Set Statement"
   },
   "Public": {
-    "prefix": "Public",
+    "prefix": "Public ",
     "body": [
       "Public ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
       "$0"
@@ -313,14 +313,14 @@
     "description": "Public WithEvents statement"
   },
   "ReDim": {
-    "prefix": "ReDim",
+    "prefix": "ReDim ",
     "body": [
       "ReDim${1: Preserve} ${2:varName}(${3:${4:Count}${5|+,-|}}${6:1})$0"
     ],
     "description": "ReDim Statement"
   },
   "RmDir Path": {
-    "prefix": "RmDir",
+    "prefix": "RmDir ",
     "body": [
       "RmDir \"${1:path}\"",
       "$0"
@@ -328,7 +328,7 @@
     "description": "RmDir Stetment"
   },
   "RSet": {
-    "prefix": "RSet",
+    "prefix": "RSet ",
     "body": [
       "RSet ${1:stringvar} = ${2:string}",
       "$0"
@@ -336,7 +336,7 @@
     "description": "RSet statement"
   },
   "SaveSetting": {
-    "prefix": "SaveSetting",
+    "prefix": "SaveSetting ",
     "body": [
       "SaveSetting appname := ${1:appName}, section := ${2:sectionName}, key := ${3:keyName}, setting := ${4:value}",
       "$0"
@@ -355,7 +355,7 @@
     "description": "Select Case Statements"
   },
   "Static Variable": {
-    "prefix": "Static",
+    "prefix": "Static ",
     "body": [
       "Static ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
       "$0"
@@ -363,7 +363,7 @@
     "description": "Static statement"
   },
   "Sub": {
-    "prefix": "Sub",
+    "prefix": "Sub ",
     "body": [
       "${1:${2|Public,Private,Friend|} }Sub ${3:name}(${4:${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})",
       "\t$0${7:\n\tIf ${8:varName} ${9|=,<>,>,>=,<,<=|} ${10:value} Then Exit Sub\n\t'TODO: STATEMENTS\n}",
@@ -381,7 +381,7 @@
     "description": "Sub statement"
   },
   "Type": {
-    "prefix": "Type",
+    "prefix": "Type ",
     "body": [
       "${1:${2|Public,Private|} }Type ${3:name}",
       "\t'TODO: USER-DEFINED ELEMENTS",
@@ -392,7 +392,7 @@
     "description": "Type statement"
   },
   "Unload": {
-    "prefix": "Unload",
+    "prefix": "Unload ",
     "body": [
       "Unload ${1:object}",
       "$0"
@@ -412,7 +412,7 @@
     "description": "While...Wend Statement"
   },
   "With": {
-    "prefix": "With",
+    "prefix": "With ",
     "body": [
       "With ${1:object}",
       "\t'TODO: STATEMENTS",
