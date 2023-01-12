@@ -19,6 +19,9 @@
       }
     ]
   },
+  "scripts": {
+    "vscode:prepublish": "tsc"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
