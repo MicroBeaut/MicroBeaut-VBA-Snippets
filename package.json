@@ -20,7 +20,10 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "tsc"
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "tslint -p ./",
+    "watch": "tsc -watch -p ./"
   },
   "license": "MIT",
   "repository": {
