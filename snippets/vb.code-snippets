@@ -50,7 +50,7 @@
   "AppActivate": {
     "prefix": "AppActivate ",
     "body": [
-      "AppActivate \"${1:title}\"${2:,${3:wait}}"
+      "AppActivate \"${1:title}\"${2:, ${3:wait}}"
     ],
     "description": "Activates an application window."
   },
@@ -64,7 +64,7 @@
   "Call": {
     "prefix": "Call ",
     "body": [
-      "${1:Call }${2:name} ${3:(${4:argumentlist})}"
+      "${1:Call }${2:name}${3: (${4:argumentlist})}"
     ],
     "description": "Transfers control to a Sub procedure, Function procedure, or dynamic-link library (DLL) procedure."
   },
@@ -83,9 +83,9 @@
     "description": "Changes the current drive."
   },
   "Close...": {
-    "prefix": "Close ${1:fileNumberList}",
+    "prefix": "Close ",
     "body": [
-      "Close"
+      "Close${1: ${2:fileNumberList}}"
     ],
     "description": "Concludes input/output (I/O) to a file opened by using the Open statement."
   },
