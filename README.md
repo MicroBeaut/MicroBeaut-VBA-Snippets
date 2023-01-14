@@ -1517,6 +1517,9 @@ Tan (number)
 - Added Conversion functions
 - Added Math functions
 
+### [0.0.5]
+- Fixed package not updated.
+<br/>
 
 # License
 

@@ -2,7 +2,7 @@
   "name": "microbeaut-vba-snippets",
   "displayName": "MicroBeaut VBA Snippets",
   "description": "Code Snippets for Visual Basic for Applications (VBA)",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publisher": "MicroBeaut",
   "icon": "images/microbeaut-logo.png",
   "engines": {
