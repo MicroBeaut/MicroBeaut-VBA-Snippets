@@ -11,7 +11,20 @@ All notable changes to the "Microbeaut VBA Snippets" extension will be documente
 - Added new statements
 
 ### [0.0.3]
-- Changed the prefix for ```Dim WithEvent```, ``` On Error *```, ```Private WithEvent```, and ```Public WithEvent```
+- Changed the prefix for,
+    - ```Dim WithEvent```
+    - ``` On Error *```
+    - ```Private WithEvent```
+    - ```Public WithEvent```
 
 ### [0.0.4]
-- Revised the prefix + space
+- Removed statements ``If...Then..Exit`` inside,
+    - ``Do...Loop``
+    - ``For Each...Next``
+    - ``For...Next``
+    - ``Function``
+    - ``If...Then...Else``
+- Updated descriptions
+- Added new statements
+- Added Conversion functions
+- Added Math functions

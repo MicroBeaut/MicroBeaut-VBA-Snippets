@@ -1,51 +1,128 @@
 {
+  //--------------------------------------------------
+  // SECTION:     OPTIONAL
+  // DESCRIPTION: SUBVARIABLE DATA TYPES
+  //--------------------------------------------------
+  "Variable Data Types": {
+    "prefix": "As ",
+    "body": [
+      "As ${1|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}"
+    ],
+    "description": "Declaring variables."
+  },
+  //--------------------------------------------------
+  // SECTION:     OPTIONAL
+  // DESCRIPTION: FILE ATTRIBUTES
+  //--------------------------------------------------
+  "File Attributes": {
+    "prefix": "Attributes",
+    "body": [
+      "${1|vbNormal,vbReadOnly,vbHidden,vbSystem,vbArchive,vbAlias|}"
+    ],
+    "description": "File attributes."
+  },
+  //--------------------------------------------------
+  // SECTION:     OPTIONAL
+  // DESCRIPTION: DAYS OF WEEK
+  //--------------------------------------------------
+  "Days": {
+    "prefix": "Days",
+    "body": [
+      "${1|Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday|}"
+    ],
+    "description": "description"
+  },
+  //--------------------------------------------------
+  // SECTION:     OPTIONAL
+  // DESCRIPTION: MONTY OF THE YEAR
+  //--------------------------------------------------
+  "Months": {
+    "prefix": "Months",
+    "body": [
+      "${1|January,February,March,April,May,June,July,August,September,October,November,December|}"
+    ],
+    "description": "description"
+  },
+  //--------------------------------------------------
+  // SECTION:     STATEMENTS
+  // DESCRIPTION: STATEMENTS CODE SNIPPETS
+  //--------------------------------------------------
+  "AppActivate": {
+    "prefix": "AppActivate ",
+    "body": [
+      "AppActivate \"${1:title}\"${2:,${3:wait}}"
+    ],
+    "description": "Activates an application window."
+  },
+  "Beep": {
+    "prefix": "Beep",
+    "body": [
+      "Beep"
+    ],
+    "description": "Sounds a tone through the computer's speaker."
+  },
+  "Call": {
+    "prefix": "Call ",
+    "body": [
+      "${1:Call }${2:name} ${3:(${4:argumentlist})}"
+    ],
+    "description": "Transfers control to a Sub procedure, Function procedure, or dynamic-link library (DLL) procedure."
+  },
   "ChDir...": {
     "prefix": "ChDir ",
     "body": [
-      "ChDir \"${1:path}\"",
-      "$0"
+      "ChDir \"${1:path}\""
     ],
-    "description": "ChDir statement"
+    "description": "Changes the current directory or folder."
   },
   "ChDrive...": {
     "prefix": "ChDrive ",
     "body": [
-      "ChDrive \"${1:drive}\"",
-      "$0"
+      "ChDrive \"${1:drive}\""
     ],
-    "description": "ChDrive statement"
+    "description": "Changes the current drive."
+  },
+  "Close...": {
+    "prefix": "Close ${1:fileNumberList}",
+    "body": [
+      "Close"
+    ],
+    "description": "Concludes input/output (I/O) to a file opened by using the Open statement."
   },
   "Const...": {
     "prefix": "Const ",
     "body": [
-      "${1:${2|Public,Private|} }Const ${3:constName}${4: As ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}} = ${6:expression}",
-      "$0"
+      "${1:${2|Private,Public|} }Const ${3:constName}${4: As ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}} = ${6:expression}"
     ],
-    "description": "Const statement"
+    "description": "Declares constants for use in place of literal values."
+  },
+  "Date": {
+    "prefix": "Date ",
+    "body": [
+      "Date = #${1:${2:$CURRENT_MONTH_NAME} ${3:$CURRENT_DATE}, ${4:$CURRENT_YEAR}}#"
+    ],
+    "description": "Sets the system time"
   },
   "DeleteSetting": {
     "prefix": "DeleteSetting ",
     "body": [
-      "DeleteSetting appname := ${1:appName}, section := ${2:sectionName}, key := ${3:keyName}",
-      "$0"
+      "DeleteSetting appname := ${1:appName}, section := ${2:sectionName}, key := ${3:keyName}"
     ],
-    "description": "DeleteSetting statement"
+    "description": "Deletes a section or key setting from an application's entry in the Windows registry."
   },
   "Dim...": {
     "prefix": "Dim ",
     "body": [
-      "Dim ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
-      "$0"
+      "Dim ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}"
     ],
-    "description": "Dim statement"
+    "description": "Declares variables and allocates storage space."
   },
   "Dim WithEvents...": {
-    "prefix": "Dim With",
+    "prefix": "Dim WithEvents",
     "body": [
-      "Dim WithEvents ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
-      "$0"
+      "Dim WithEvents ${1:varName} As ${2:className}"
     ],
-    "description": "Dim WithEvents statement"
+    "description": "Declares variables to respond to events triggered."
   },
   "Do...Loop Until/While": {
     "prefix": [
@@ -55,7 +132,7 @@
     "body": [
       "Do",
       "\t'TODO: STATEMENTS",
-      "\t$0${5:\n\tIf ${6:varName} ${7|=,<>,>,>=,<,<=|} ${8:value} Then Exit Do\n\t'TODO: STATEMENTS\n}",
+      "\t$0",
       "Loop ${1|Until,While|} ${2:varName} ${3|=,<>,>,>=,<,<=|} ${4:value}"
     ],
     "description": "Do...Loop Until/While Statement"
@@ -68,280 +145,541 @@
     "body": [
       "Do ${1|Until,While|} ${2:varName} ${3|=,<>,>,>=,<,<=|} ${4:value}",
       "\t'TODO: STATEMENTS",
-      "\t$0${5:\n\tIf ${6:varName} ${7|=,<>,>,>=,<,<=|} ${8:value} Then Exit Do\n\t'TODO: STATEMENTS\n}",
+      "\t$0",
       "Loop"
     ],
     "description": "Do...Loop Until/While Statement"
   },
-  "Enum...": {
+  "End": {
+    "prefix": "End",
+    "body": [
+      "End"
+    ],
+    "description": "Ends a procedure."
+  },
+  "End Function": {
+    "prefix": "End Function",
+    "body": [
+      "End Function"
+    ],
+    "description": "Ends a function."
+  },
+  "End If": {
+    "prefix": "End If",
+    "body": [
+      "End If"
+    ],
+    "description": "Ends a If."
+  },
+  "End Select": {
+    "prefix": "End Select",
+    "body": [
+      "End Select"
+    ],
+    "description": "Ends a Select."
+  },
+  "End Sub": {
+    "prefix": "End Sub",
+    "body": [
+      "End Sub"
+    ],
+    "description": "Ends a Sub."
+  },
+  "End Type": {
+    "prefix": "End Type",
+    "body": [
+      "End Type"
+    ],
+    "description": "Ends a Type."
+  },
+  "End With": {
+    "prefix": "End With",
+    "body": [
+      "End With"
+    ],
+    "description": "Ends a With."
+  },
+  "Enumeration": {
     "prefix": "Enum ",
     "body": [
-      "${1:${2|Public,Private|} }Enum ${3:name}",
+      "${1:${2|Private,Public|} }Enum ${3:name}",
       "\t'TODO: USER-DEFINED MEMBERS",
       "\t${4:membername} = ${5:constant}",
       "\t$0",
       "End Type"
     ],
-    "description": "Enum statement"
+    "description": "Declares a type for an enumeration."
   },
-  "Erase...": {
+  "Reinitializes": {
     "prefix": "Erase ",
     "body": [
-      "Erase ${1:arraylist}",
-      "$0"
+      "Erase ${1:arraylist}"
     ],
-    "description": "Erase statement"
+    "description": "Reinitializes the elements of fixed-size arrays and releases dynamic-array storage space."
+  },
+  "Error": {
+    "prefix": "Error ",
+    "body": [
+      "Error ${1:errorNumber}"
+    ],
+    "description": "Simulates the occurrence of an error."
+  },
+  "Event": {
+    "prefix": "Event ",
+    "body": [
+      "${1:${2|Private,Public|} }Event ${3:procedureName}(${4:${5|ByRef,ByVal|} ${6:varName} As ${7|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})"
+    ],
+    "description": "Declares a user-defined event."
+  },
+  "Exit Do": {
+    "prefix": "Exit Do",
+    "body": [
+      "Exit Do"
+    ],
+    "description": "Exits a block of Do...Loop code."
+  },
+  "Exit For": {
+    "prefix": "Exit Fo",
+    "body": [
+      "Exit For"
+    ],
+    "description": "Exits a block of For...Next code."
+  },
+  "Exit Function": {
+    "prefix": "Exit Fu",
+    "body": [
+      "Exit Function"
+    ],
+    "description": "Exits a block of Function code."
+  },
+  "Exit Property": {
+    "prefix": "Exit Pr",
+    "body": [
+      "Exit Property"
+    ],
+    "description": "Exits a block of Property code."
+  },
+  "Exit Sub": {
+    "prefix": "Exit Su",
+    "body": [
+      "Exit Sub"
+    ],
+    "description": "Exits a block of Sub code."
+  },
+  "FileCopy": {
+    "prefix": "FileCopy",
+    "body": [
+      "FileCopy ${1:strSource}, ${2:strDestination}"
+    ],
+    "description": "Copies a file."
   },
   "For Each...Next": {
     "prefix": "For Each",
     "body": [
-      "For Each ${1:element} in ${2:group}",
+      "For Each ${1:element} In ${2:group}",
       "\t'TODO: STATEMENTS",
-      "\t$0${3:\n\tIf ${4:varName} ${5|=,<>,>,>=,<,<=|} ${6:value} Then Exit For\n\t'TODO: STATEMENTS\n}",
+      "\t$0",
       "Next ${1:element}"
     ],
-    "description": "For Each...Next Statement"
+    "description": "Repeats a group of statements for each element in an array or collection"
   },
   "For...Next": {
     "prefix": [
       "For Next"
     ],
     "body": [
-      "For ${1:counter} = ${2:0} to ${3:9}${4: Step ${5|-,+|} ${6:1}}",
+      "For ${1:counter} = ${2:0} to ${3:9}${4: Step ${5|+,-|} ${6:1}}",
       "\t'TODO: STATEMENTS",
-      "\t$0${7:\n\tIf ${8:varName} ${9|=,<>,>,>=,<,<=|} ${10:value} Then Exit For\n\t'TODO: STATEMENTS\n}",
+      "\t$0",
       "Next ${1:counter}"
     ],
-    "description": "For...Next Statement"
+    "description": "Repeats a group of statements a specified number of times."
   },
   "Function...": {
     "prefix": "Function ",
     "body": [
-      "${1:${2|Public,Private,Friend|} }Function ${3:name}(${4:${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})${7: As ${8|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}}",
+      "${1:${2|Private,Public,Friend|} }Function ${3:name}(${4:${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})${7: As ${8|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}}",
       "\t'TODO: STATEMENTS",
-      "\t$0${9:\n\tIf ${10:varName} ${11|=,<>,>,>=,<,<=|} ${12:value} Then Exit Function\n\t'TODO: STATEMENTS\n}",
-      "\t${13:${3:name} = ${14:value}}",
+      "\t$0",
       "End Function"
     ],
-    "description": "Function statement"
+    "description": "Declares the Function."
   },
   "Static Function...": {
     "prefix": "Function Static",
     "body": [
-      "${1:${2|Public,Private,Friend|} }Static Function ${3:name}(${4:${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})${7: As ${8|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}}",
+      "${1:${2|Private,Public,Friend|} }Static Function ${3:name}(${4:${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})${7: As ${8|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}}",
       "\t'TODO: STATEMENTS",
-      "\t$0${9:\n\tIf ${10:varName} ${11|=,<>,>,>=,<,<=|} ${12:value} Then Exit Function\n\t'TODO: STATEMENTS\n}",
-      "\t${13:${3:name} = ${14:value}}",
+      "\t$0",
       "End Function"
     ],
-    "description": "Static Function statement"
+    "description": "Declares the Statuc Function."
+  },
+  "Get #...": {
+    "prefix": "Get ",
+    "body": [
+      "Get #${1:fileNumber}, ${2:recnumber}, ${3:varname}"
+    ],
+    "description": "Reads data from an open disk file into a variable."
+  },
+  "GoSub": {
+    "prefix": "GoSub ",
+    "body": [
+      "GoSub ${1:line}"
+    ],
+    "description": "Branches to and returns from a subroutine within a procedure."
+  },
+  "Return": {
+    "prefix": "Return",
+    "body": [
+      "Return"
+    ],
+    "description": "Return to GoSub.."
+  },
+  "Goto Line": {
+    "prefix": "Goto ",
+    "body": [
+      "Goto ${1:line}"
+    ],
+    "description": "Branches unconditionally to a specified line within a procedure."
   },
   "If...Then...Else": {
     "prefix": "If ",
     "body": [
       "If ${1:varName} ${2|=,<>,>,>=,<,<=|} ${3:value} Then",
       "\t'TODO: STATEMENTS",
-      "\t$0${4:\nElseif ${1:varName} ${5|=,<>,>,>=,<,<=|} ${6:value} Then\n\t'TODO: STATEMENTS\n\t}${7:\nElse\n\t'TODO: STATEMENTS\n\t}",
+      "\t$0",
       "End If"
     ],
-    "description": "If...Then...Else statement"
+    "description": "Conditionally executes a group of statements, depending on the value of an expression."
+  },
+  "Input #...": {
+    "prefix": "Input ",
+    "body": [
+      "Input #${1:fileNumber}, ${2:varList}"
+    ],
+    "description": "Reads data from an open sequential file and assigns the data to variables."
+  },
+  "Kill...": {
+    "prefix": "Kill ",
+    "body": [
+      "Kill ${1:pathName}"
+    ],
+    "description": "Deletes files from a disk."
+  },
+  "Let...": {
+    "prefix": "Let ",
+    "body": [
+      "Let ${1:varName} = ${2:expression}"
+    ],
+    "description": "Assigns the value of an expression to a variable or property."
+  },
+  "Line Input #...": {
+    "prefix": "Line Input",
+    "body": [
+      "Line Input #${1:fileNumber}, ${2:varName}"
+    ],
+    "description": "Reads a single line from an open sequential file and assigns it to a String variable."
   },
   "Load": {
     "prefix": "Load ",
     "body": [
-      "Load ${1:object}",
-      "$0"
+      "Load ${1:object}"
     ],
-    "description": "Load statement"
+    "description": "Loads an object but doesn't show it."
+  },
+  "Lock #...": {
+    "prefix": "Lock ",
+    "body": [
+      "Lock #${1:fileNumber}, ${2:recordRange}"
+    ],
+    "description": "Lock to all or part of a file opened by using the Open statement."
+  },
+  "Unlock #...": {
+    "prefix": "Unlock ",
+    "body": [
+      "Unlock #${1:fileNumber}, ${2:recordRange}"
+    ],
+    "description": "Unlock to all or part of a file opened by using the Open statement."
   },
   "LSet": {
     "prefix": "LSet ",
     "body": [
-      "LSet ${1:stringvar} = ${2:string}",
-      "$0"
+      "LSet ${1:stringvar} = ${2:string}"
     ],
-    "description": "LSet statement"
+    "description": "Left aligns a string within a string variable, or copies a variable of one user-defined type to another variable of a different user-defined type."
   },
   "Mid": {
-    "prefix": "Mid(",
+    "prefix": "Mid",
     "body": [
-      "Mid(${1:stringvar}, ${2:start}${3:, ${4:length}})${5: = ${6:string}}",
-      "$0"
+      "Mid(${1:stringvar}, ${2:start}${3:, ${4:length}})${5: = ${6:string}}"
     ],
-    "description": "Mid Statement"
+    "description": "Replaces a specified number of characters in a Variant (String) variable with characters from another string."
   },
-  "On Error Goto": {
+  "Make directory or folder": {
+    "prefix": "MkDir",
+    "body": [
+      "MkDir ${1:path}"
+    ],
+    "description": "Creates a new directory or folder."
+  },
+  "Rename...": {
+    "prefix": "Name ",
+    "body": [
+      "Name ${1:srtOldPathName} As ${2:strNewPathName}"
+    ],
+    "description": "Renames a disk file, directory, or folder."
+  },
+  "On Error GoTo": {
     "prefix": "On Error Go",
     "body": [
-      "On Error Goto ${1|Line,0|}",
-      "$0"
+      "On Error GoTo ${1|Line,0|}"
     ],
-    "description": "On Error statement"
+    "description": "Enables an error-handling routine"
   },
   "On Error Resume Next": {
     "prefix": "On Error Re",
     "body": [
-      "On Error Resume Next",
-      "$0"
+      "On Error Resume Next"
     ],
-    "description": "On Error statement"
+    "description": "Enables an error-handling routine"
+  },
+  "On...GoSub": {
+    "prefix": "On GoSub",
+    "body": [
+      "On ${1:expression} GoSub ${2:destinationList}"
+    ],
+    "description": "Branch to one of several specified lines, depending on the value of an expression."
+  },
+  "On...GoTo": {
+    "prefix": "On GoTo",
+    "body": [
+      "On ${1:expression} GoTo ${2:destinationList}"
+    ],
+    "description": "Branch to one of several specified lines, depending on the value of an expression."
+  },
+  "Open": {
+    "prefix": "Open ",
+    "body": [
+      "Open ${1:pathname} For ${2|Append,Binary,Input,Output,Random|}${3: Access ${4|Read,Write,Read Write|}}${5: Lock ${6|Shared,Lock Read,Lock Write,Lock Read Write|}} As #${7:fileNumber}${8: Len = ${9:reclength}}"
+    ],
+    "description": "Enables input/output (I/O) to a file."
   },
   "Option Base": {
-    "prefix": "Option Base",
+    "prefix": "Option Ba",
     "body": [
-      "Option Base ${1|1,0|}",
-      "$0"
+      "Option Base ${1|1,0|}"
     ],
     "description": "Option Base statement"
   },
   "Option Option Compare": {
-    "prefix": "Option Compare",
+    "prefix": "Option Co",
     "body": [
-      "Option Compare ${1|Binary,Text,Database|}",
-      "$0"
+      "Option Compare ${1|Binary,Text,Database|}"
     ],
     "description": "Option Compare statement"
   },
   "Option Explicit": {
-    "prefix": "Option Explicit",
+    "prefix": "Option Ex",
     "body": [
-      "Option Explicit",
-      "$0"
+      "Option Explicit"
     ],
     "description": "Option Explicit statement"
   },
   "Option Private Module": {
-    "prefix": "Option Private Module",
+    "prefix": "Option Pr",
     "body": [
-      "Option Private Module",
-      "$0"
+      "Option Private Module"
     ],
     "description": "Option Private Module statement"
+  },
+  "Print #...": {
+    "prefix": "Print ",
+    "body": [
+      "Print #${1:fileNumber}, ${2:outputList}"
+    ],
+    "description": "Writes display-formatted data to a sequential file."
   },
   "Private": {
     "prefix": "Private ",
     "body": [
-      "Private ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
-      "$0"
+      "Private ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}"
     ],
-    "description": "Private statement"
+    "description": "Used at the module level to declare private variables and allocate storage space."
   },
   "Private WithEvents": {
     "prefix": "Private With",
     "body": [
-      "Private WithEvents ${2:varName}${3:(${4:9})} As${5: New} ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
-      "$0"
+      "Private WithEvents ${2:varName}${3:(${4:9})} As${5: New} ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}"
     ],
-    "description": "Private WithEvents statement"
+    "description": "Used at the module level to declare private WithEvent."
   },
   "Property Get": {
     "prefix": "Property Get",
     "body": [
-      "${1|Public,Private,Friend|} Property Get ${2:name} (${3:${4:Optional }${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}}) As ${7|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
+      "${1|Private,Public,Friend|} Property Get ${2:name} (${3:${4:Optional }${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}}) As ${7|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
       "\t'TODO: STATEMENTS",
       "\t$0",
       "\n\t${2:name} = ${9:varName}",
       "End Property"
     ],
-    "description": "Property Get Statement"
+    "description": "Declares the name, arguments, and code that form the body of a Property procedure, which gets the value of a property."
   },
   "Static Property Get": {
     "prefix": "Property Get Static",
     "body": [
-      "${1|Public,Private,Friend|} Static Property Get ${2:name} (${3:${4:Optional }${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}}) As ${7|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
+      "${1|Private,Public,Friend|} Static Property Get ${2:name} (${3:${4:Optional }${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}}) As ${7|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
       "\t'TODO: STATEMENTS",
       "\t$0",
       "\n\t${2:name} = ${9:varName}",
       "End Property"
     ],
-    "description": "Property Get Static Statement"
+    "description": "Declares the name, arguments, and code that form the body of a Property procedure, which gets the value of a property."
   },
   "Property Let": {
     "prefix": "Property Let",
     "body": [
-      "${1|Public,Private|} Property Let ${2:name} (${3:value} As ${4|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|})",
+      "${1|Private,Public|} Property Let ${2:name} (${3:value} As ${4|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|})",
       "\t'TODO: STATEMENTS",
       "\t$0${5:\n\t\n\t${6:varName} = ${3:value}}",
       "End Property"
     ],
-    "description": "Property Let Statement"
+    "description": "Declares the name, arguments, and code that form the body of a Property procedure, which assigns a value to a property."
   },
   "Static Property Let": {
     "prefix": "Property Let Static",
     "body": [
-      "${1|Public,Private|} Static Property Let ${2:name} (${3:value} As ${4|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|})",
+      "${1|Private,Public|} Static Property Let ${2:name} (${3:value} As ${4|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|})",
       "\t'TODO: STATEMENTS",
       "\t$0${5:\n\t\n\t${6:varName} = ${3:value}}",
       "End Property"
     ],
-    "description": "Property Let Static Statement"
+    "description": "Declares the name, arguments, and code that form the body of a Property procedure, which assigns a value to a property."
   },
   "Property Set": {
     "prefix": "Property Set",
     "body": [
-      "${1|Public,Private|} Property Set ${2:name} (${3:value} As ${4|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|})",
+      "${1|Private,Public|} Property Set ${2:name} (${3:value} As ${4|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|})",
       "\t'TODO: STATEMENTS",
       "\t$0${5:\n\t\n\tSet ${6:varName} = ${3:value}}",
       "End Property"
     ],
-    "description": "Property Set Statement"
+    "description": "Declares the name, arguments, and code that form the body of a Property procedure, which sets a reference to an object."
   },
   "Static Property Set": {
     "prefix": "Property Set Static",
     "body": [
-      "${1|Public,Private|} Static Property Set ${2:name} (${3:value} As ${4|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|})",
+      "${1|Private,Public|} Static Property Set ${2:name} (${3:value} As ${4|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|})",
       "\t'TODO: STATEMENTS",
       "\t$0${5:\n\t\n\tSet ${6:varName} = ${3:value}}",
       "End Property"
     ],
-    "description": "Property Set Statement"
+    "description": "Declares the name, arguments, and code that form the body of a Property procedure, which sets a reference to an object."
   },
   "Public": {
     "prefix": "Public ",
     "body": [
-      "Public ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
-      "$0"
+      "Public ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}"
     ],
-    "description": "Public statement"
+    "description": "Used at the module level to declare public variables and allocate storage space."
   },
   "Public WithEvents": {
     "prefix": "Public With",
     "body": [
-      "Public WithEvents ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
-      "$0"
+      "Public WithEvents ${1:varName} As${2: New} ${3|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}"
     ],
-    "description": "Public WithEvents statement"
+    "description": "Used at the module level to declare public variables and allocate storage space."
+  },
+  "Put #...": {
+    "prefix": "Put ",
+    "body": [
+      "Put #${1:fileNumber}, ${2:recnumber}, ${3:varname}"
+    ],
+    "description": "Writes display-formatted data to a sequential file."
+  },
+  "RaiseEvent...": {
+    "prefix": "RaiseEvent ",
+    "body": [
+      "RaiseEvent ${1:eventName}${2: (${3:argumentList})}"
+    ],
+    "description": "Fires an event declared at the module level within a class, form, or document."
+  },
+  "Randomize": {
+    "prefix": "Randomize ",
+    "body": [
+      "Randomize${1: ${2:number}}"
+    ],
+    "description": "Initializes the random-number generator."
   },
   "ReDim": {
     "prefix": "ReDim ",
     "body": [
-      "ReDim${1: Preserve} ${2:varName}(${3:${4:Count}${5|+,-|}}${6:1})$0"
+      "ReDim${1: Preserve} ${2:varName}(${3:subscripts})"
     ],
-    "description": "ReDim Statement"
+    "description": "Used at the procedure level to reallocate storage space for dynamic array variables."
+  },
+  "Rem": {
+    "prefix": "Rem ",
+    "body": [
+      "Rem ${1:comment}"
+    ],
+    "description": "Initializes the random-number generator."
+  },
+  "Reset": {
+    "prefix": "Reset",
+    "body": [
+      "Reset"
+    ],
+    "description": "Closes all disk files opened by using the Open statement."
+  },
+  "Resume": {
+    "prefix": "Resume",
+    "body": [
+      "Resume"
+    ],
+    "description": "Resumes execution after an error-handling routine is finished."
+  },
+  "Resume Next": {
+    "prefix": "Resume Ne",
+    "body": [
+      "Resume Next"
+    ],
+    "description": "Resumes execution after an error-handling routine is finished."
+  },
+  "Resume Line": {
+    "prefix": "Resume Li",
+    "body": [
+      "Resume ${1:line}$0"
+    ],
+    "description": "Resumes execution after an error-handling routine is finished."
   },
   "RmDir Path": {
     "prefix": "RmDir ",
     "body": [
-      "RmDir \"${1:path}\"",
-      "$0"
+      "RmDir \"${1:path}\""
     ],
-    "description": "RmDir Stetment"
+    "description": "Removes an existing directory or folder."
   },
   "RSet": {
     "prefix": "RSet ",
     "body": [
-      "RSet ${1:stringvar} = ${2:string}",
-      "$0"
+      "RSet ${1:stringvar} = ${2:string}"
     ],
-    "description": "RSet statement"
+    "description": "Right aligns a string within a string variable."
   },
   "SaveSetting": {
     "prefix": "SaveSetting ",
     "body": [
-      "SaveSetting appname := ${1:appName}, section := ${2:sectionName}, key := ${3:keyName}, setting := ${4:value}",
-      "$0"
+      "SaveSetting appname := ${1:appName}, section := ${2:sectionName}, key := ${3:keyName}, setting := ${4:value}"
     ],
-    "description": "SaveSetting statement"
+    "description": "Saves or creates an application entry in the application's entry in the Windows registry."
+  },
+  "Seek #...": {
+    "prefix": "Seek ",
+    "body": [
+      "Seek #${1:fileNumber}, ${2:position}"
+    ],
+    "description": "Sets the position for the next read/write operation within a file opened by using the Open statement."
   },
   "Select Case": {
     "prefix": "Select Case",
@@ -352,52 +690,87 @@
       "\t\t$0${3:\n\tCase Else\n\t\t'TODO: ELSE STATEMENTS\n\t\t}",
       "End Select"
     ],
-    "description": "Select Case Statements"
+    "description": "Executes one of several groups of statements, depending on the value of an expression."
+  },
+  "SendKeys...": {
+    "prefix": "SendKeys",
+    "body": [
+      "SendKeys \"${1:string}\", ${2:wait}"
+    ],
+    "description": "Sends one or more keystrokes to the active window as if typed at the keyboard."
+  },
+  "Set...": {
+    "prefix": "Set ",
+    "body": [
+      "Set ${1:objectvar} =${2: New} ${3:Nothing}"
+    ],
+    "description": "Assigns an object reference to a variable or property."
+  },
+  "SetAttr...": {
+    "prefix": "SetAttr ",
+    "body": [
+      "SetAttr ${1:pathname}, ${2:attributes}"
+    ],
+    "description": "Sets attribute information for a file."
   },
   "Static Variable": {
     "prefix": "Static ",
     "body": [
-      "Static ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
-      "$0"
+      "Static ${1:varName}${2:(${3:9})} As${4: New} ${5|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}"
     ],
     "description": "Static statement"
+  },
+  "Stop": {
+    "prefix": "Stop",
+    "body": [
+      "Stop"
+    ],
+    "description": "Suspends execution."
   },
   "Sub": {
     "prefix": "Sub ",
     "body": [
-      "${1:${2|Public,Private,Friend|} }Sub ${3:name}(${4:${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})",
-      "\t$0${7:\n\tIf ${8:varName} ${9|=,<>,>,>=,<,<=|} ${10:value} Then Exit Sub\n\t'TODO: STATEMENTS\n}",
+      "${1:${2|Private,Public,Friend|} }Sub ${3:name}(${4:${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})",
+      "\t'TODO: STATEMENTS",
+      "\t$0",
       "End Sub"
     ],
-    "description": "Sub statement"
+    "description": "Declares the name, arguments, and code that form the body of a Sub procedure."
   },
   "Static Sub": {
     "prefix": "Sub Static",
     "body": [
-      "${1:${2|Public,Private,Friend|} }Static Sub ${3:name}(${4:${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})",
-      "\t$0${7:\n\tIf ${8:varName} ${9|=,<>,>,>=,<,<=|} ${10:value} Then Exit Sub\n\t'TODO: STATEMENTS\n}",
+      "${1:${2|Private,Public,Friend|} }Static Sub ${3:name}(${4:${5:value} As ${6|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}})",
+      "\t'TODO: STATEMENTS",
+      "\t$0",
       "End Sub"
     ],
-    "description": "Sub statement"
+    "description": "Declares the name, arguments, and code that form the body of a Sub procedure."
+  },
+  "Time": {
+    "prefix": "Time ",
+    "body": [
+      "Time = #${1:hh:mm:ss} ${2|AM,PM|}#"
+    ],
+    "description": "Sets the system time"
   },
   "Type": {
     "prefix": "Type ",
     "body": [
-      "${1:${2|Public,Private|} }Type ${3:name}",
+      "${1:${2|Private,Public|} }Type ${3:name}",
       "\t'TODO: USER-DEFINED ELEMENTS",
       "\t${4:elementname}${5:(${6:9})} As ${7|Variant,Boolean,Byte,Currency,Date,Decimal,Double,Integer,Long,LongLong,LongPtr,Object,Single,String|}",
       "\t$0",
       "End Type"
     ],
-    "description": "Type statement"
+    "description": "Used at the module level to define a user-defined data type containing one or more elements."
   },
   "Unload": {
     "prefix": "Unload ",
     "body": [
-      "Unload ${1:object}",
-      "$0"
+      "Unload ${1:object}"
     ],
-    "description": "Unload statement"
+    "description": "Removes an object from memory."
   },
   "While...Wend": {
     "prefix": [
@@ -409,7 +782,14 @@
       "\t$0",
       "Wend"
     ],
-    "description": "While...Wend Statement"
+    "description": "Executes a series of statements as long as a given condition is True."
+  },
+  "Width #...": {
+    "prefix": "Width ",
+    "body": [
+      "Width #${1:fileNumber}, ${2:width 0-255}"
+    ],
+    "description": "Reads data from an open sequential file and assigns the data to variables."
   },
   "With": {
     "prefix": "With ",
@@ -419,6 +799,161 @@
       "\t$0",
       "End With"
     ],
-    "description": "With statement"
+    "description": "Assigns an output line width to a file opened by using the Open statement."
+  },
+  "Write #...": {
+    "prefix": "Write ",
+    "body": [
+      "Write #${1:fileNumber}, ${2:outputlist}"
+    ],
+    "description": "Reads data from an open sequential file and assigns the data to variables."
+  },
+  //--------------------------------------------------
+  // SECTION:     FUNCTION
+  // DESCRIPTION: CONVERSION FUNCTIONS
+  //--------------------------------------------------
+  "ASCII Code": {
+    "prefix": "Asc",
+    "body": [
+      "Asc(${1:\"${2:string}\"})"
+    ],
+    "description": "Returns an Integer representing the character code"
+  },
+  "Char Code": {
+    "prefix": "Chr",
+    "body": [
+      "Chr(${1:charcode})"
+    ],
+    "description": "Returns a String containing the character associated"
+  },
+  "Format": {
+    "prefix": "Format",
+    "body": [
+      "Format(${1:expression},${2:formatExpression}${3:,${4|vbSunday,vbMonday,vbTuesday,vbWednesday,vbThursday,vbFriday,vbSaturday,vbUseSystemDayOfWeek|}${5:,${6|vbFirstJan1,vbFirstFourDays,vbFirstFullWeek,vbUseSystem|}}})"
+    ],
+    "description": "Returns a Variant (String) containing an expression formatteds"
+  },
+  "Hex Code": {
+    "prefix": "Hex",
+    "body": [
+      "Hex(${1:number})"
+    ],
+    "description": "Returns a String representing the hexadecimal value of a number"
+  },
+  "Oct Code": {
+    "prefix": "Oct",
+    "body": [
+      "Oct(${1:number})"
+    ],
+    "description": "Returns a Variant (String) representing the octal value of a number"
+  },
+  "Value to String": {
+    "prefix": "Str",
+    "body": [
+      "Str(${1:number})"
+    ],
+    "description": "Returns a Variant (String) representation of a number"
+  },
+  "String to Value": {
+    "prefix": "Val",
+    "body": [
+      "Val(${1:number})"
+    ],
+    "description": "Returns the numbers contained in a string as a numeric value of appropriate type"
+  },
+  //--------------------------------------------------
+  // SECTION:     FUNCTION
+  // DESCRIPTION: MATH FUNCTIONS
+  //--------------------------------------------------
+  "Absolute Function": {
+    "prefix": "Abs",
+    "body": [
+      "Abs(${1:number})"
+    ],
+    "description": "Returns a value of the same type that is passed to it specifying the absolute value of a number"
+  },
+  "Arctangent Function": {
+    "prefix": "Atn",
+    "body": [
+      "Atn(${1:number})"
+    ],
+    "description": "Returns a Double specifying the arctangent of a number"
+  },
+  "Cosine Function": {
+    "prefix": "Cos",
+    "body": [
+      "Cos(${1:number})"
+    ],
+    "description": "Returns a Double specifying the cosine of an angle"
+  },
+  "Exponential Function": {
+    "prefix": "Exp",
+    "body": [
+      "Exp(${1:number})"
+    ],
+    "description": "Returns a Double specifying e (the base of natural logarithms) raised to a power"
+  },
+  "Integer": {
+    "prefix": "Int",
+    "body": [
+      "Int(${1:number})"
+    ],
+    "description": "Returns the integer portion of a number"
+  },
+  "Fix": {
+    "prefix": "Fix",
+    "body": [
+      "Fix(${1:number})"
+    ],
+    "description": "Returns the integer portion of a number"
+  },
+  "Log": {
+    "prefix": "Log",
+    "body": [
+      "Log(${1:number})"
+    ],
+    "description": "Returns a Double specifying the natural logarithm of a number"
+  },
+  "Return a Single Rnd": {
+    "prefix": "Rnd ",
+    "body": [
+      "(${1:maxValue} * Rnd) + ${2:minValue} 'Before calling Rnd, use the Randomize statement without an argument to initialize the random-number generator with a seed based on the system timer."
+    ],
+    "description": "Returns a Single containing a pseudo-random number."
+  },
+  "Return Integer Rnd": {
+    "prefix": "Rnd Int",
+    "body": [
+      "Int((${1:maxValue} * Rnd) + ${2:minValue}) 'Before calling Rnd, use the Randomize statement without an argument to initialize the random-number generator with a seed based on the system timer."
+    ],
+    "description": "Returns a Integer containing a pseudo-random number."
+  },
+  "Sign of a number": {
+    "prefix": "Sgn",
+    "body": [
+      "Sgn(${1:number})"
+    ],
+    "description": "Returns a Variant (Integer) indicating the sign of a number."
+  },
+  "Sine of an angle": {
+    "prefix": "Sin",
+    "body": [
+      "Sin(${1:number})"
+    ],
+    "description": "Returns a Double specifying the sine of an angle."
+  },
+  "Square root of a number.": {
+    "prefix": "Sqr",
+    "body": [
+      "Sqr(${1:number})"
+    ],
+    "description": "Returns a Double specifying the square root of a number."
+  },
+  "Transfers of an angle": {
+    "prefix": "Tan",
+    "body": [
+      "Tan(${1:number})"
+    ],
+    "description": "Returns a Double specifying the tangent of an angle."
   }
 }
