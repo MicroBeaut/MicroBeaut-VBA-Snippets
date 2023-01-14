@@ -4,7 +4,7 @@
   "description": "Code Snippets for Visual Basic for Applications (VBA)",
   "version": "0.0.4",
   "publisher": "MicroBeaut",
-  "icon": "./images/microbeaut-logo.png",
+  "icon": "images/microbeaut-logo.png",
   "engines": {
     "vscode": "^1.74.0"
   },
