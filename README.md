@@ -1,14 +1,253 @@
-# MicroBeaut Visual Basic for Applications (VBA) Snippets
+<p align="center">
+  <img alt="microbeaut logo" src="images/microbeaut-logo.png" width="128px" />
+  <h1 align="center">MicroBeaut Visual Basic for Applications (VBA) Snippets</h1>
+</p>
 
-### Install snippets from the Marketplace
-<br/>
+### Install MicroBeaut VBA Snippets from the Marketplace
 
-<img src="./images/install-microbeaut-vba-snippets.gif" width="640px" height="480px">
+<img src="images/install-microbeaut-vba-snippets.gif" width="640px" height="480px">
 
-<br/>
+# Provides VBA Snippets for:
 
-# Statements
+## VBA Constants
+- [Calendar constants](#calendar-constants)
+- [Color constants](#color-constants)
+- [Comparison constants](#comparison-constants)
+- [Date constants](#date-constants)
+  - [Day of Week](#day-of-week)
+  - [First Week Of Year](#first-week-of-year)
+- [Dir, GetAttr, and SetAttr constants](#dir-getattr-and-setattr-constants)
 
+## Statements
+- [AppActivate](#appactivate)
+- [Beep](#beep)
+- [Call](#call)
+- [ChDir](#chdir)
+- [ChDrive](#chdrive)
+- [Close](#close)
+- [Const](#const)
+- [Date](#date)
+- [DeleteSetting](#deletesetting)
+- [Dim](#dim)
+- [Do...Loop](#doloop)
+- [End](#end)
+- [Enum](#enum)
+- [Erase](#erase)
+- [Error](#error)
+- [Event](#event)
+- [Exit](#exit)
+- [FileCopy](#filecopy)
+- [For Each...Next](#for-eachnext)
+- [For...Next](#fornext)
+- [Function](#function)
+- [Get](#get)
+- [GoSub...Return](#gosubreturn)
+- [GoTo](#goto)
+- [If...Then...Else](#ifthenelse)
+- [Input #](#input)
+- [Kill](#kill)
+- [Let](#let)
+- [Line Input #](#line-input)
+- [Load](#load)
+- [Lock, Unlock](#lock-unlock)
+- [LSet](#lset)
+- [Mid](#mid)
+- [MkDir](#mkdir)
+- [Name](#name)
+- [On Error](#on-error)
+- [On...GoSub, On...GoTo](#ongosub-ongoto)
+- [Open](#open)
+- [Option Base](#option-base)
+- [Option Compare](#option-compare)
+- [Option Explicit](#option-explicit)
+- [Option Private](#option-private)
+- [Print #](#print)
+- [Private](#private)
+- [Property Get](#property-get)
+- [Property Let](#property-let)
+- [Property Set](#property-set)
+- [Public](#public)
+- [Put](#put)
+- [RaiseEvent](#raiseevent)
+- [Randomize](#randomize)
+- [ReDim](#redim)
+- [Rem](#rem)
+- [Reset](#reset)
+- [Resume](#resume)
+- [RmDir](#rmdir)
+- [RSet](#rset)
+- [SaveSetting](#savesetting)
+- [Seek](#seek)
+- [Select Case](#select-case)
+- [SendKeys](#sendkeys)
+- [Set](#set)
+- [SetAttr](#setattr)
+- [Static](#static)
+- [Stop](#stop)
+- [Sub](#sub)
+- [Time](#time)
+- [Type](#type)
+- [Unload](#unload)
+- [While...Wend](#whilewend)
+- [Width #](#width)
+- [With](#with)
+- [Write #](#write)
+
+
+## Functions
+
+### Conversion functions
+  - [Asc](#asc)
+  - [Chr](#chr)
+  - [Format](#format)
+  - [Hex](#hex)
+  - [Oct](#oct)
+  - [Str](#str)
+  - [Val](#val)
+
+### Math functions
+  - [Abs](#abs)
+  - [Atn](#atn)
+  - [Cos](#cos)
+  - [Exp](#exp)
+  - [Int, Fix](#int-fix)
+  - [Log](#log)
+  - [Rnd](#rnd)
+  - [Sgn](#sgn)
+  - [Sin](#sin)
+  - [Sqr](#sqr)
+  - [Tan](#tan)
+
+
+# [VB Constants](#vba-constants)
+The following ``constants`` can be used anywhere in your code in place of the actual values.
+
+## Calendar constants
+
+### **Prefix**
+
+```vb
+VbCalendar 
+```
+
+The ```VbCalendar``` argument has the following values.
+
+|Constant|Value|Description|
+|:-----|:-----|:-----|
+|**vbCalGreg**|0|Indicates that the Gregorian calendar is used.|
+|**vbCalHijri**|1|Indicates that the Hijri calendar is used.|
+
+
+## Color constants
+
+### **Prefix**
+
+```vb
+ColorConstants 
+```
+
+The ```ColorConstants``` argument has the following values.
+
+|Constant|Value|Description|
+|:-----|:-----|:-----|
+|**vbBlack**|0x0|Black|
+|**vbRed**|0xFF|Red|
+|**vbGreen**|0xFF00|Green|
+|**vbYellow**|0xFFFF|Yellow|
+|**vbBlue**|0xFF0000|Blue|
+|**vbMagenta**|0xFF00FF|Magenta|
+|**vbCyan**|0xFFFF00|Cyan|
+|**vbWhite**|0xFFFFFF|White|
+
+
+
+## Comparison constants
+
+### **Prefix**
+
+```vb
+VbCompareMethod 
+```
+
+The ```VbCompareMethod``` argument has the following values.
+
+|Constant|Value|Description|
+|:-----|:-----|:-----|
+|**vbUseCompareOption**|-1|Performs a comparison by using the setting of the **[Option Compare](option-compare-statement.md)** statement.|
+|**vbBinaryCompare**|0|Performs a binary comparison.|
+|**vbTextCompare**|1|Performs a textual comparison.|
+|**vbDatabaseCompare**|2|For Microsoft Access (Windows only), performs a comparison based on information contained in your database.|
+
+
+## Date constants
+
+The following ``constants`` can be used anywhere in your code in place of the actual values.
+
+###  Day of Week
+
+#### **Prefix**
+
+```vb
+VbDayOfWeek 
+```
+
+The ```VbDayOfWeek``` argument has the following values.
+
+|Constant|Value|Description|
+|:-----|:-----|:-----|
+|**VbUseSystemDayOfWeek**|0|Use the day of the week specified in your system settings for the first day of the week.|
+|**vbSunday**|1|Sunday (default)|
+|**vbMonday**|2|Monday|
+|**vbTuesday**|3|Tuesday|
+|**vbWednesday**|4|Wednesday|
+|**vbThursday**|5|Thursday|
+|**vbFriday**|6|Friday|
+|**vbSaturday**|7|Saturday|
+
+
+### First Week Of Year
+
+#### **Prefix**
+
+```vb
+VbFirstWeekOfYear 
+```
+
+The  ```VbFirstWeekOfYear``` argument has the following values.
+
+|Constant|Value|Description|
+|:-----|:-----|:-----|
+|**vbUseSystem**|0|Use NLS API setting.|
+|**VbFirstJan1**|1|Start with week in which January 1 occurs (default).|
+|**vbFirstFourDays**|2|Start with the first week that has at least four days in the new year.|
+|**vbFirstFullWeek**|3|Start with the first full week of the year.|
+
+
+## Dir, GetAttr, and SetAttr constants
+
+### **Prefix**
+
+```vb
+VbFileAttribute 
+```
+
+The  ```VbFileAttribute``` argument has the following values.
+
+|Constant|Value|Description|
+|:-----|:-----|:-----|
+|**vbNormal**|0|Normal (default for **Dir** and **SetAttr**)|
+|**vbReadOnly**|1|Read-only|
+|**vbHidden**|2|Hidden|
+|**vbSystem**|4|System file|
+|**vbVolume**|8|Volume label|
+|**vbDirectory**|16|Directory or folder|
+|**vbArchive**|32|File has changed since last backup|
+|**vbAlias**|64|On the Macintosh, identifier is an alias|
+
+Only **VbNormal**, **vbReadOnly**, **vbHidden**, and **vbAlias** are available on the Macintosh.
+
+
+# [Statements](#statements)
 ## **``AppActivate``**
 Activates an application window.
 
@@ -16,12 +255,10 @@ Activates an application window.
 ```vb
 AppActivate 
 ```
-
 ### **Syntax**
 ```vb
 AppActivate title, [ wait ]
 ```
-<br/>
 
 
 ## **``Beep``**
@@ -36,21 +273,20 @@ Beep
 ```vb
 Beep
 ```
-<br/>
+
 
 ## **``Call``**
 Transfers control to a Sub procedure, Function procedure, or dynamic-link library (DLL) procedure.
 
 ### **Prefix**
 ```vb
-[ Call ] name [ argumentlist ]  
+Call 
 ```
 
 ### **Syntax**
 ```vb
-Call 
+[ Call ] name [ argumentlist ]
 ```
-<br/>
 
 
 ## **``ChDir``**
@@ -66,7 +302,6 @@ ChDir
 ```vb
 ChDir path
 ```
-<br/>
 
 
 ## **``ChDrive``**
@@ -81,10 +316,9 @@ ChDrive
 ```vb
 ChDrive drive
 ```
-<br/>
 
 
-## **``Close ``**
+## **``Close``**
 Concludes input/output (I/O) to a file opened by using the Open statement.
 
 ### **Prefix**
@@ -96,7 +330,6 @@ Close
 ```vb
 Close [ filenumberlist ]
 ```
-<br/>
 
 
 ## **``Const``**
@@ -111,7 +344,6 @@ Const
 ```vb
 [ Public | Private ] Const constname [ As type ] = expression
 ```
-<br/>
 
 
 ## **``Date``**
@@ -126,10 +358,9 @@ Date
 ```vb
 Date = date
 ```
-<br/>
 
 
-## **``DeleteSetting ``**
+## **``DeleteSetting``**
 Deletes a section or key setting from an application's entry in the Windows ``registry`` or (on the Macintosh) information in the application's initialization file.
 
 ### **Prefix**
@@ -141,7 +372,6 @@ DeleteSetting
 ```vb
 DeleteSetting appname, section, key
 ```
-<br/>
 
 
 ## **``Dim``**
@@ -157,7 +387,6 @@ Dim WithEvents
 ```vb
 Dim [ WithEvents ] varname [ ( [ subscripts ] ) ] [ As [ New ] type ]
 ```
-<br/>
 
 
 ## **``Do...Loop``**
@@ -194,7 +423,6 @@ Do
   [ statements ]
 Loop [{ While | Until } condition ]
 ```
-<br/>
 
 
 ## **``End``**
@@ -223,7 +451,6 @@ End Sub
 End Type
 End With
 ```
-<br/>
 
 
 ## **``Enum``**
@@ -241,7 +468,6 @@ Enum
   membername [= constantexpression ] . . .
 End Enum
 ```
-<br/>
 
 
 ## **``Erase``**
@@ -256,7 +482,6 @@ Erase
 ```vb
 Erase arraylist
 ```
-<br/>
 
 
 ## **``Error``**
@@ -271,8 +496,6 @@ Error
 ```vb
 Error errornumber
 ```
-<br/>
-
 
 
 ## **``Event``**
@@ -287,7 +510,6 @@ Event
 ```vb
 [ Public ] Event procedurename [ (arglist) ]
 ```
-<br/>
 
 
 ## **``Exit``**
@@ -310,7 +532,6 @@ Exit Function
 Exit Property
 Exit Sub
 ```
-<br/>
 
 
 ## **``FileCopy``**
@@ -325,7 +546,7 @@ FileCopy
 ```vb
 FileCopy source, destination
 ```
-<br/>
+
 
 ## **``For Each...Next``**
 Repeats a group of ``statements`` for each element in an ``arrays`` or collection.
@@ -343,7 +564,6 @@ For Each element In group
   [ statements ]
 Next [ element ]
 ```
-<br/>
 
 
 ## **``For...Next``**
@@ -362,7 +582,6 @@ For counter = start To end [ Step step ]
   [ statements ]
 Next [ counter ]
 ```
-<br/>
 
 
 ## **``Function``**
@@ -384,7 +603,6 @@ Function Static
   [ name = expression ]
 End Function
 ```
-<br/>
 
 
 ## **``Get``**
@@ -399,7 +617,6 @@ Get
 ```vb
 Get [ # ] filenumber, [ recnumber ], varname 
 ```
-<br/>
 
 
 ## **``GoSub...Return``**
@@ -417,7 +634,6 @@ GoSub line
 line ...
 Return
 ```
-<br/>
 
 
 ## **``GoTo``**
@@ -432,7 +648,7 @@ GoTo line
 ```vb
 GoTo line
 ```
-<br/>
+
 
 ## **``If...Then...Else``**
 Conditionally executes a group of ``statements``, depending on the value of an expression.
@@ -456,7 +672,7 @@ If condition Then
   [ elsestatements ]]
 End If
 ```
-<br/>
+
 
 ## **``Load``**
 Loads an object but doesn't show it.
@@ -470,10 +686,9 @@ Load
 ```vb
 Load object
 ```
-<br/>
 
 
-## **``Input #``**
+## **``Input``**
 Reads data from an open sequential file and assigns the data to variables.
 
 ### **Prefix**
@@ -485,7 +700,6 @@ Input
 ```vb
 Input #filenumber, varlist
 ```
-<br/>
 
 
 ## **``Kill``**
@@ -500,7 +714,6 @@ Kill
 ```vb
 Kill pathname
 ```
-<br/>
 
 
 ## **``Let``**
@@ -515,9 +728,9 @@ Let
 ```vb
 [ Let ] varname = expression
 ```
-<br/>
 
-## **``Line Input #``**
+
+## **``Line Input``**
 Reads a single line from an open sequential file and assigns it to a String variable.
 
 ### **Prefix**
@@ -529,7 +742,6 @@ Line Input
 ```vb
 Line Input #
 ```
-<br/>
 
 
 ## **``Lock, Unlock``**
@@ -546,7 +758,7 @@ Unlock
 Lock [ # ] filenumber, [ recordrange ]
 Unlock [ # ] filenumber, [ recordrange ]
 ```
-<br/>
+
 
 ## **``LSet``**
 Left aligns a string within a string variable, or copies a variable of one ``user-defined type`` to another variable of a different user-defined type.
@@ -561,7 +773,6 @@ LSet
 LSet stringvar = string
 LSet varname1 = varname2
 ```
-<br/>
 
 
 ## **``Mid``**
@@ -576,7 +787,7 @@ Mid
 ```vb
 Mid(stringvar, start, [ length ] ) = string
 ```
-<br/>
+
 
 ## **``MkDir``**
 Creates a new directory or folder.
@@ -590,7 +801,6 @@ MkDir
 ```vb
 MkDir path
 ```
-<br/>
 
 
 ## **``Name``**
@@ -605,7 +815,6 @@ Name
 ```vb
 Name oldpathname As newpathname
 ```
-<br/>
 
 
 ## **``On Error``**
@@ -623,7 +832,6 @@ On Error GoTo 0
 On Error GoTo line
 On Error Resume Next
 ```
-<br/>
 
 
 ## **``On...GoSub, On...GoTo``**
@@ -640,7 +848,7 @@ On GoTo
 On expression GoSub destinationlist
 On expression GoTo destinationlist
 ```
-<br/>
+
 
 ## **``Open``**
 Enables input/output (I/O) to a file.
@@ -654,7 +862,6 @@ Open
 ```vb
 Open pathname For mode [ Access access ] [ lock ] As [ # ] filenumber [ Len = reclength ]
 ```
-<br/>
 
 
 ## **``Option Base``**
@@ -669,7 +876,6 @@ Option Ba
 ```vb
 Option Base { 0 | 1 }
 ```
-<br/>
 
 
 ## **``Option Compare``**
@@ -684,7 +890,6 @@ Option Co
 ```vb
 Option Compare { Binary | Text | Database }
 ```
-<br/>
 
 
 ## **``Option Explicit``**
@@ -699,9 +904,9 @@ Option Ex
 ```vb
 Option Explicit
 ```
-<br/>
 
-## **``Option Private Module``**
+
+## **``Option Private``**
 When used in host applications that allow references across multiple projects, **Option Private Module** prevents a module's contents from being referenced outside its project. In host applications that don't permit such references, for example, standalone versions of Visual Basic, **Option Private** has no effect.
 
 ### **Prefix**
@@ -713,10 +918,9 @@ Option Pr
 ```vb
 Option Private Module
 ```
-<br/>
 
 
-## **``Print #``**
+## **``Print``**
 Writes display-formatted data to a sequential file.
 
 ### **Prefix**
@@ -728,7 +932,6 @@ Print #
 ```vb
 Print #filenumber, [ outputlist ]
 ```
-<br/>
 
 
 ## **``Private``**
@@ -744,8 +947,6 @@ Private With
 ```vb
 Private [ WithEvents ] varname [ ( [ subscripts ] ) ] [ As [ New ] type ]
 ```
-<br/>
-
 
 
 ## **``Property Get``**
@@ -767,7 +968,6 @@ Property Get Static
   [ name = expression ]
 End Property
 ```
-<br/>
 
 
 ## **``Property Let``**
@@ -787,7 +987,7 @@ Property Let Static
   [ statements ]
 End Property
 ```
-<br/>
+
 
 ## **``Property Set``**
 Declares the name, arguments, and code that form the body of a **Property** procedure, which sets a reference to an object.
@@ -806,7 +1006,6 @@ Property Set Static
   [ statements ]
 End Property
 ```
-<br/>
 
 
 ## **``Public``**
@@ -822,7 +1021,7 @@ Public With
 ```vb
 Public [ WithEvents ] varname [ ( [ subscripts ] ) ] [ As [ New ] type ]
 ```
-<br/>
+
 
 ## **``Put``**
 Writes data from a variable to a disk file.
@@ -836,7 +1035,7 @@ Put
 ```vb
 Put [ # ] filenumber, [ recnumber ], varname
 ```
-<br/>
+
 
 ## **``RaiseEvent``**
 Fires an event declared at the module level within a class, form, or document.
@@ -850,7 +1049,7 @@ RaiseEvent
 ```vb
 RaiseEvent eventname [ ( argumentlist ) ]
 ```
-<br/>
+
 
 ## **``Randomize``**
 Initializes the random-number generator.
@@ -864,7 +1063,6 @@ Randomize
 ```vb
 Randomize [ number ]
 ```
-<br/>
 
 
 ## **``ReDim``**
@@ -879,7 +1077,7 @@ ReDim
 ```vb
 ReDim [ Preserve ] varname ( subscripts )
 ```
-<br/>
+
 
 ## **``Rem``**
 Used to include explanatory remarks in a program.
@@ -893,7 +1091,7 @@ Rem
 ```vb
 Rem comment
 ```
-<br/>
+
 
 ## **``Reset``**
 Closes all disk files opened by using the Open statement.
@@ -907,7 +1105,7 @@ Reset
 ```vb
 Reset
 ```
-<br/>
+
 
 ## **``Resume``**
 Removes an existing directory or folder.
@@ -925,7 +1123,6 @@ Resume [ 0 ]
 Resume Next
 Resume line
 ```
-<br/>
 
 
 ## **``RmDir``**
@@ -940,7 +1137,6 @@ RmDir
 ```vb
 RmDir path
 ```
-<br/>
 
 
 ## **``RSet``**
@@ -956,7 +1152,6 @@ RSet
 RSet stringvar = string
 RSet varname1 = varname2
 ```
-<br/>
 
 
 ## **``SaveSetting``**
@@ -989,7 +1184,6 @@ Seek
 ```vb
 Seek [ # ] filenumber, position
 ```
-<br/>
 
 
 ## **``Select Case``**
@@ -1009,7 +1203,7 @@ Select Case testexpression
   [ elsestatements ]]
 End Select
 ```
-<br/>
+
 
 ## **``SendKeys``**
 Sends one or more keystrokes to the active window as if typed at the keyboard.
@@ -1023,7 +1217,6 @@ SendKeys
 ```vb
 SendKeys [ # ] filenumber, position
 ```
-<br/>
 
 
 ## **``Set``**
@@ -1038,7 +1231,7 @@ Set
 ```vb
 Set objectvar = {[ New ] objectexpression | Nothing }
 ```
-<br/>
+
 
 ## **``SetAttr``**
 Sets attribute information for a file.
@@ -1052,7 +1245,6 @@ SetAttr
 ```vb
 SetAttr pathname, attributes
 ```
-<br/>
 
 
 ## **``Static``**
@@ -1067,7 +1259,7 @@ Static
 ```vb
 Static varname [ ( [ subscripts ] ) ] [ As [ New ] type ]
 ```
-<br/>
+
 
 ## **``Stop``**
 Suspends execution.
@@ -1081,7 +1273,6 @@ Stop
 ```vb
 Stop
 ```
-<br/>
 
 
 ## **``Sub``**
@@ -1101,7 +1292,6 @@ Sub Static
   [ statements ]
 End Sub
 ```
-<br/>
 
 
 ## **``Time``**
@@ -1116,7 +1306,6 @@ Time
 ```vb
 Time = time
 ```
-<br/>
 
 
 ## **``Type``**
@@ -1134,7 +1323,7 @@ Type
   [ elementname [ ( [ subscripts ] ) ] As type ] . . .
 End Type
 ```
-<br/>
+
 
 ## **``Unload``**
 Removes an object from memory.
@@ -1148,7 +1337,6 @@ Unload
 ```vb
 Unload object
 ```
-<br/>
 
 
 ## **``While...Wend``**
@@ -1165,10 +1353,9 @@ While condition
   [ statements ]
 Wend
 ```
-<br/>
 
 
-## **``Width #``**
+## **``Width``**
 Assigns an output line width to a file opened by using the Open statement.
 
 ### **Prefix**
@@ -1180,7 +1367,6 @@ Width
 ```vb
 Width #filenumber, width
 ```
-<br/>
 
 
 ## **``With``**
@@ -1197,9 +1383,9 @@ With object
   [ statements ]
 End With
 ```
-<br/>
 
-## **``Write #``**
+
+## **``Write``**
 Writes data to a sequential file.
 
 ### **Prefix**
@@ -1211,10 +1397,8 @@ Write
 ```vb
 Write #filenumber, [ outputlist ]
 ```
-<br/>
 
-# Conversion functions
-
+# [Conversion functions](#conversion-functions)
 ## **``Asc``**
 Returns an Integer representing the character code corresponding to the first letter in a string.
 
@@ -1227,7 +1411,7 @@ Asc
 ```vb
 Asc(string)
 ```
-<br/>
+
 
 ## **``Chr``**
 Returns a String containing the character associated with the specified character code.
@@ -1241,7 +1425,7 @@ Chr
 ```vb
 Chr(charcode)
 ```
-<br/>
+
 
 ## **``Format``**
 Returns a Variant (String) containing an expression formatted according to instructions contained in a format expression.
@@ -1255,7 +1439,7 @@ Format
 ```vb
 Format(Expression, [ Format ], [ FirstDayOfWeek ], [ FirstWeekOfYear ])
 ```
-<br/>
+
 
 ## **``Hex``**
 Returns a Variant (String) containing an expression formatted according to instructions contained in a format expression.
@@ -1269,7 +1453,6 @@ Hex
 ```vb
 Hex(number)
 ```
-<br/>
 
 
 ## **``Oct``**
@@ -1284,7 +1467,7 @@ Oct
 ```vb
 Oct(number)
 ```
-<br/>
+
 
 ## **``Str``**
 Returns a Variant (String) representation of a number.
@@ -1298,7 +1481,7 @@ Str
 ```vb
 Str(number)
 ```
-<br/>
+
 
 ## **``Val``**
 Returns the numbers contained in a string as a numeric value of appropriate type.
@@ -1312,11 +1495,8 @@ Val
 ```vb
 Val(string)
 ```
-<br/>
 
-
-# Math functions
-
+# [Math functions](#math-functions)
 ## **``Abs``**
 Returns a value of the same type that is passed to it specifying the absolute value of a number.
 
@@ -1329,7 +1509,6 @@ Abs
 ```vb
 Abs(number)
 ```
-<br/>
 
 
 ## **``Atn``**
@@ -1344,7 +1523,6 @@ Atn
 ```vb
 Atn(number)
 ```
-<br/>
 
 
 ## **``Cos``**
@@ -1359,7 +1537,6 @@ Cos
 ```vb
 Cos(number)
 ```
-<br/>
 
 
 ## **``Exp``**
@@ -1374,7 +1551,6 @@ Exp
 ```vb
 Exp(number)
 ```
-<br/>
 
 
 ## **``Int, Fix``**
@@ -1391,7 +1567,7 @@ Fix
 Int(number)
 Fix(number)
 ```
-<br/>
+
 
 ## **``Log``**
 Returns a Double specifying the natural logarithm of a number.
@@ -1405,7 +1581,7 @@ Log
 ```vb
 Log(number)
 ```
-<br/>
+
 
 ## **``Rnd``**
 Returns a Single containing a pseudo-random number.
@@ -1419,7 +1595,7 @@ Rnd
 ```vb
 Rnd [ (Number) ]
 ```
-<br/>
+
 
 ## **``Sgn``**
 Returns a Variant (Integer) indicating the sign of a number.
@@ -1433,7 +1609,6 @@ Sgn
 ```vb
 Sgn(number)
 ```
-<br/>
 
 
 ## **``Sin``**
@@ -1448,7 +1623,7 @@ Sin
 ```vb
 Sin(number)
 ```
-<br/>
+
 
 ## **``Sqr``**
 Returns a Double specifying the sine of an angle.
@@ -1462,9 +1637,9 @@ Sqr
 ```vb
 Sqr(number)
 ```
-<br/>
 
-## **``Tan ``**
+
+## **``Tan``**
 Returns a Double specifying the tangent of an angle.
 
 ### **Prefix**
@@ -1476,9 +1651,6 @@ Tan
 ```vb
 Tan (number)
 ```
-<br/>
-
-
 
 # Reference
 
@@ -1502,8 +1674,6 @@ Tan (number)
     - ``` On Error *```
     - ```Private WithEvent```
     - ```Public WithEvent```
-<br/>
-
 
 ### [0.0.4]
 - Removed statements ``If...Then..Exit`` inside,
@@ -1518,7 +1688,10 @@ Tan (number)
 - Added Math functions
 
 ### [0.0.5]
-- Fixed package not updated.
+- Fixed package not updated
+
+### [0.0.6]
+- Added VBA Constants
 <br/>
 
 # License

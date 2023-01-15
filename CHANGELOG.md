@@ -30,4 +30,7 @@ All notable changes to the "Microbeaut VBA Snippets" extension will be documente
 - Added Math functions
 
 ### [0.0.5]
-- Fixed package not updated.
+- Fixed package not updated
+
+### [0.0.6]
+- Added VBA Constants

@@ -1,6 +1,72 @@
 {
   //--------------------------------------------------
-  // SECTION:     OPTIONAL
+  // SECTION:     CONSTANT
+  // DESCRIPTION: CALENDAR CONSTANTS
+  //--------------------------------------------------
+  "Calendar constants": {
+    "prefix": "VbCalendar",
+    "body": [
+      "${1|vbCalGreg,vbCalHijri|}"
+    ],
+    "description": "Calendar constants"
+  },
+  //--------------------------------------------------
+  // SECTION:     CONSTANT
+  // DESCRIPTION: COLOR CONSTANTS
+  //--------------------------------------------------
+  "Color constants": {
+    "prefix": "ColorConstants",
+    "body": [
+      "${1|vbBlack,vbRed,vbGreen,vbYellow,vbBlue,vbMagenta,vbCyan,vbWhite|}"
+    ],
+    "description": "Color constants"
+  },
+  //--------------------------------------------------
+  // SECTION:     CONSTANT
+  // DESCRIPTION: COMPARE METHOD
+  //--------------------------------------------------
+  "Compare Method": {
+    "prefix": "VbCompareMethod",
+    "body": [
+      "${1|vbBinaryCompare,vbDatabaseCompare,vbTextCompare|}"
+    ],
+    "description": "Compare Method constants"
+  },
+  //--------------------------------------------------
+  // SECTION:     CONSTANT
+  // DESCRIPTION: DAYS OF WEEK
+  //--------------------------------------------------
+  "Day Of Week": {
+    "prefix": "VbDayOfWeek",
+    "body": [
+      "${1|vbSunday,vbMonday,vbTuesday,vbWednesday,vbThursday,vbFriday,vbSaturday,vbUseSystemDayOfWeek|}"
+    ],
+    "description": "Day Of Week constants"
+  },
+  //--------------------------------------------------
+  // SECTION:     CONSTANT
+  // DESCRIPTION: FIRST WEEK OF YEAR
+  //--------------------------------------------------
+  "First Week Of Year": {
+    "prefix": "VbFirstWeekOfYear",
+    "body": [
+      "${1|VbFirstJan1,vbFirstFourDays,vbFirstFullWeek,vbUseSystem|}"
+    ],
+    "description": "First Week Of Year constants"
+  },
+  //--------------------------------------------------
+  // SECTION:     CONSTANT
+  // DESCRIPTION: FILE ATTRIBUTES
+  //--------------------------------------------------
+  "File Attribute": {
+    "prefix": "VbFileAttribute",
+    "body": [
+      "${1|vbNormal,vbReadOnly,vbHidden,vbSystem,vbVolume,vbDirectory,vbArchive,vbAlias|}"
+    ],
+    "description": "File Attribute constants."
+  },
+  //--------------------------------------------------
+  // SECTION:     CONSTANT
   // DESCRIPTION: SUBVARIABLE DATA TYPES
   //--------------------------------------------------
   "Variable Data Types": {
@@ -11,29 +77,7 @@
     "description": "Declaring variables."
   },
   //--------------------------------------------------
-  // SECTION:     OPTIONAL
-  // DESCRIPTION: FILE ATTRIBUTES
-  //--------------------------------------------------
-  "File Attributes": {
-    "prefix": "Attributes",
-    "body": [
-      "${1|vbNormal,vbReadOnly,vbHidden,vbSystem,vbArchive,vbAlias|}"
-    ],
-    "description": "File attributes."
-  },
-  //--------------------------------------------------
-  // SECTION:     OPTIONAL
-  // DESCRIPTION: DAYS OF WEEK
-  //--------------------------------------------------
-  "Days": {
-    "prefix": "Days",
-    "body": [
-      "${1|Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday|}"
-    ],
-    "description": "description"
-  },
-  //--------------------------------------------------
-  // SECTION:     OPTIONAL
+  // SECTION:     CONSTANT
   // DESCRIPTION: MONTY OF THE YEAR
   //--------------------------------------------------
   "Months": {
